@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-primary text-white-100 font-sans antialiased overflow-x-hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00E5FF;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00b3cc;
+}
+
+/* Premium Effects */
+.glow-text {
+  text-shadow: 0 0 20px rgba(145, 94, 255, 0.5),
+    0 0 40px rgba(145, 94, 255, 0.3);
+}
+
+.violet-gradient {
+  background: linear-gradient(180deg, #915eff 0%, rgba(60, 51, 80, 0) 100%);
+}
+
+.green-pink-gradient {
+  background: linear-gradient(135deg, #00cea8 0%, #bf61ff 100%);
+}
+
+.black-gradient {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.edge-glow {
+  box-shadow: inset 0 0 150px rgba(0, 229, 255, 0.05);
+}
+
+/* Smooth transitions */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hide default cursor on desktop */
+@media (min-width: 1024px) {
+  * {
+    cursor: none !important;
+  }
+
+  a,
+  button {
+    cursor: none !important;
+  }
+}
