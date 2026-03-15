@@ -129,8 +129,8 @@ const Contact = () => {
                     <div className="bg-white/5 border border-white/10 p-8 rounded-sm hover:-translate-y-1 hover:border-white/20 transition-all duration-300">
                         <Mail className="text-accent mb-6" size={28} />
                         <h4 className="text-secondary font-mono text-xs uppercase tracking-widest mb-2">Direct Email</h4>
-                        <a href="mailto:hello@example.com" className="text-white font-sans text-lg hover:text-accent transition-colors">
-                            hello@example.com
+                        <a href="mailto:raunakshahu.cg@gmail.com" className="text-white font-sans text-lg hover:text-accent transition-colors">
+                            raunakshahu.cg@gmail.com
                         </a>
                     </div>
 

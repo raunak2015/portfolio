@@ -1,6 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { projects } from "../constants";
 
@@ -9,24 +8,29 @@ const ProjectCard = ({
     name,
     description,
     tags,
-    image,
+    category,
     source_code_link,
     demo_link,
 }) => {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+            layout
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.4 }}
             className="flex flex-col group h-full rounded-sm overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300"
         >
-            <div className="relative w-full h-[250px] overflow-hidden">
-                <img 
-                    src={image} 
-                    alt={name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-80 group-hover:opacity-100 mix-blend-luminosity hover:mix-blend-normal"
-                />
+            {/* Abstract Graphic Area instead of direct image rendering to keep it clean */}
+            <div className="relative w-full h-[180px] bg-white/5 flex items-center justify-center overflow-hidden border-b border-white/5">
+                 <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                 <h4 className="font-serif text-3xl text-white/20 group-hover:text-white/40 italic transition-colors duration-500 z-10 select-none text-center px-4">
+                     {name}
+                 </h4>
+                 
+                 {/* Decorative tech lines */}
+                 <div className="absolute top-4 left-4 w-8 h-[1px] bg-white/10" />
+                 <div className="absolute bottom-4 right-4 w-12 h-[1px] bg-white/10" />
             </div>
 
             <div className="flex flex-col flex-grow p-6 sm:p-8">
@@ -38,7 +42,7 @@ const ProjectCard = ({
                     {description}
                 </p>
 
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-6 flex flex-wrap gap-2 mb-4">
                     {tags.map((tag) => (
                         <span
                             key={`${name}-${tag.name}`}
@@ -49,9 +53,9 @@ const ProjectCard = ({
                     ))}
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-white/10 flex justify-between items-center">
+                <div className="mt-auto pt-6 border-t border-white/10 flex justify-between items-center">
                     <div className="font-mono text-[11px] text-green-400">
-                        &lt; production ready /&gt;
+                        &lt; deployed /&gt;
                     </div>
                     
                     <div className="flex gap-4">
@@ -79,6 +83,15 @@ const ProjectCard = ({
 };
 
 const Projects = () => {
+    const [activeFilter, setActiveFilter] = useState('All');
+    
+    const filters = ['All', 'Clones', 'Games', 'React'];
+
+    const filteredProjects = projects.filter(project => {
+        if (activeFilter === 'All') return true;
+        return project.category === activeFilter;
+    });
+
     return (
         <section id="work" className="max-w-7xl mx-auto px-6 sm:px-12 py-32">
             <motion.div
@@ -86,30 +99,45 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="mb-16"
+                className="mb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8"
             >
-                <div className="flex items-center gap-4 mb-4">
-                    <p className="font-mono text-[11px] text-accent uppercase tracking-[0.3em]">
-                        / PROJECTS
-                    </p>
-                    <div className="h-[1px] w-12 bg-accent/30"></div>
+                <div>
+                    <div className="flex items-center gap-4 mb-4">
+                        <p className="font-mono text-[11px] text-accent uppercase tracking-[0.3em]">
+                            / PROJECTS
+                        </p>
+                        <div className="h-[1px] w-12 bg-accent/30"></div>
+                    </div>
+                    <h2 className="text-white text-5xl sm:text-6xl lg:text-7xl font-serif">
+                        What I've <span className="italic text-accent">built.</span>
+                    </h2>
                 </div>
-                <h2 className="text-white text-5xl sm:text-6xl lg:text-7xl font-serif">
-                    What I've <span className="italic text-accent">built.</span>
-                </h2>
-                <p className="mt-6 text-secondary font-sans text-lg max-w-2xl font-light">
-                    A selection of production-grade systems and technical explorations. From kernel-level logic to responsive frontends.
-                </p>
+
+                {/* Category Filter */}
+                <div className="flex flex-wrap gap-2 mt-8 lg:mt-0">
+                    {filters.map((filter) => (
+                        <button
+                            key={filter}
+                            onClick={() => setActiveFilter(filter)}
+                            className={`font-mono text-[11px] uppercase tracking-[0.2em] px-4 py-2 border transition-colors duration-300 ${
+                                activeFilter === filter 
+                                ? 'bg-white text-primary border-white' 
+                                : 'bg-transparent text-secondary border-white/20 hover:border-white/50 hover:text-white'
+                            }`}
+                        >
+                            {filter}
+                        </button>
+                    ))}
+                </div>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                {projects.map((project, index) => (
-                    <ProjectCard key={`project-${index}`} index={index} {...project} />
-                ))}
-                {projects.length === 0 && (
-                    <p className="text-secondary font-mono text-sm">No projects added yet.</p>
-                )}
-            </div>
+            <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <AnimatePresence mode="popLayout">
+                    {filteredProjects.map((project, index) => (
+                        <ProjectCard key={project.name} index={index} {...project} />
+                    ))}
+                </AnimatePresence>
+            </motion.div>
         </section>
     );
 };

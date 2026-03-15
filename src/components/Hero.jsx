@@ -22,7 +22,7 @@ const Hero = () => {
 
                     <div className="flex flex-col sm:flex-row sm:items-end gap-6 mb-2">
                         <h1 className="font-serif text-white text-[60px] sm:text-[80px] lg:text-[100px] leading-[1] font-semibold tracking-tight">
-                            Raunak<span className="italic text-accent">.</span>
+                            Raunak shahu<span className="italic text-accent">.</span>
                         </h1>
                         <div className="relative mb-2">
                             <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-white/10 p-1">

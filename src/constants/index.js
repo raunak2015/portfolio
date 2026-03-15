@@ -84,69 +84,146 @@ export const experiences = [];
 
 export const projects = [
     {
-        name: "AI Code Assistant",
-        description:
-            "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        name: "Urban Monkey Clone",
+        description: "A visually striking e-commerce clone of the Urban Monkey streetwear brand, featuring modern layouts and smooth product browsing.",
         tags: [
-            {
-                name: "react",
-                color: "text-blue-500",
-            },
-            {
-                name: "mongodb",
-                color: "text-green-500",
-            },
-            {
-                name: "tailwind",
-                color: "text-pink-500",
-            },
+            { name: "clone", color: "text-blue-500" },
+            { name: "e-commerce", color: "text-green-500" },
         ],
-        image: project1,
-        source_code_link: "https://github.com/",
-        demo_link: "https://github.com/",
+        category: "Clones",
+        source_code_link: "https://github.com/raunak2015",
+        demo_link: "https://urbon-monkey-clone-raunak.netlify.app",
     },
     {
-        name: "E-Commerce Platform",
-        description:
-            "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        name: "Titan Clone",
+        description: "A sophisticated recreation of the Titan watches storefront, emphasizing premium product displays and responsive design.",
         tags: [
-            {
-                name: "react",
-                color: "text-blue-500",
-            },
-            {
-                name: "restapi",
-                color: "text-green-500",
-            },
-            {
-                name: "scss",
-                color: "text-pink-500",
-            },
+            { name: "clone", color: "text-blue-500" },
+            { name: "retail", color: "text-pink-500" },
         ],
-        image: project2,
-        source_code_link: "https://github.com/",
-        demo_link: "https://github.com/",
+        category: "Clones",
+        source_code_link: "https://github.com/raunak2015",
+        demo_link: "https://titan-clone-raunak.netlify.app",
     },
     {
-        name: "Trip Guide",
-        description:
-            "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        name: "Fellow Clone",
+        description: "A clean, high-end coffee gear e-commerce clone based on Fellow Products, focusing on minimal aesthetics.",
         tags: [
-            {
-                name: "nextjs",
-                color: "text-blue-500",
-            },
-            {
-                name: "supabase",
-                color: "text-green-500",
-            },
-            {
-                name: "css",
-                color: "text-pink-500",
-            },
+            { name: "clone", color: "text-blue-500" },
+            { name: "minimal", color: "text-green-500" },
         ],
-        image: project3,
-        source_code_link: "https://github.com/",
-        demo_link: "https://github.com/",
+        category: "Clones",
+        source_code_link: "https://github.com/raunak2015",
+        demo_link: "https://fellow-clone-raunak.netlify.app",
+    },
+    {
+        name: "Cantabil Clone",
+        description: "A robust clothing retail clone of Cantabil, showcasing complex grid layouts and navigation structures.",
+        tags: [
+            { name: "clone", color: "text-blue-500" },
+            { name: "fashion", color: "text-pink-500" },
+        ],
+        category: "Clones",
+        source_code_link: "https://github.com/raunak2015",
+        demo_link: "https://cantabil-clone-raunak.netlify.app",
+    },
+    {
+        name: "Drinkolipop Clone",
+        description: "A vibrant, colorful clone of the Olipop soda brand website, featuring playful typography and animations.",
+        tags: [
+            { name: "clone", color: "text-blue-500" },
+            { name: "landing", color: "text-green-500" },
+        ],
+        category: "Clones",
+        source_code_link: "https://github.com/raunak2015",
+        demo_link: "https://drinkolipop-clone-raunak.netlify.app",
+    },
+    {
+        name: "Razer Clone",
+        description: "A dark-themed, gaming aesthetics clone of Razer's official site, featuring high contrast and neon accents.",
+        tags: [
+            { name: "clone", color: "text-blue-500" },
+            { name: "gaming", color: "text-pink-500" },
+        ],
+        category: "Clones",
+        source_code_link: "https://github.com/raunak2015",
+        demo_link: "https://razer-clone-raunak.netlify.app",
+    },
+    {
+        name: "Meal Explorer",
+        description: "A dynamic React-based application that allows users to discover, search, and explore various meal recipes.",
+        tags: [
+            { name: "react", color: "text-blue-500" },
+            { name: "api", color: "text-green-500" },
+        ],
+        category: "React",
+        source_code_link: "https://github.com/raunak2015",
+        demo_link: "https://meal-explorer-raunak.netlify.app",
+    },
+    {
+        name: "Tic Tac Toe",
+        description: "A classic, interactive Tic-Tac-Toe game built with modern web technologies and sharp UI.",
+        tags: [
+            { name: "game", color: "text-blue-500" },
+            { name: "logic", color: "text-green-500" },
+        ],
+        category: "Games",
+        source_code_link: "https://github.com/raunak2015",
+        demo_link: "https://raunak-tic-tac-toe.netlify.app",
+    },
+    {
+        name: "Click Counter",
+        description: "A fast-paced interactive click counter game designed to test user reflexes and speed.",
+        tags: [
+            { name: "game", color: "text-blue-500" },
+            { name: "interactive", color: "text-pink-500" },
+        ],
+        category: "Games",
+        source_code_link: "https://github.com/raunak2015",
+        demo_link: "https://raunak-click-counter-game.netlify.app",
+    },
+    {
+        name: "Color Guessing",
+        description: "An engaging RGB color guessing game that challenges users to identify hex/rgb color codes visually.",
+        tags: [
+            { name: "game", color: "text-blue-500" },
+            { name: "ui-ux", color: "text-green-500" },
+        ],
+        category: "Games",
+        source_code_link: "https://github.com/raunak2015",
+        demo_link: "https://raunak-color-geussing-game.netlify.app",
+    },
+    {
+        name: "Whack-a-Mole",
+        description: "A modern web recreation of the classic arcade game Whack-a-Mole, complete with scoring and timers.",
+        tags: [
+            { name: "game", color: "text-blue-500" },
+            { name: "logic", color: "text-pink-500" },
+        ],
+        category: "Games",
+        source_code_link: "https://github.com/raunak2015",
+        demo_link: "https://raunak-whack-a-mole.netlify.app",
+    },
+    {
+        name: "Typing Speed Test",
+        description: "A responsive application to accurately track WPM, accuracy, and keystroke metrics in real-time.",
+        tags: [
+            { name: "tool", color: "text-blue-500" },
+            { name: "utility", color: "text-green-500" },
+        ],
+        category: "React",
+        source_code_link: "https://github.com/raunak2015",
+        demo_link: "https://raunak-typing-speed-test.netlify.app",
+    },
+    {
+        name: "Memory Flip",
+        description: "A challenging card-flipping memory match game featuring smooth CSS transitions and state management.",
+        tags: [
+            { name: "game", color: "text-blue-500" },
+            { name: "logic", color: "text-pink-500" },
+        ],
+        category: "Games",
+        source_code_link: "https://github.com/raunak2015",
+        demo_link: "https://raunak-memory-flip-game.netlify.app",
     },
 ];
