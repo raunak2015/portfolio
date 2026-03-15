@@ -40,8 +40,8 @@ const Contact = () => {
                 },
                 (error) => {
                     setLoading(false);
-                    console.error(error);
-                    alert("Something went wrong. Please try again.");
+                    console.error("EmailJS Error:", error);
+                    alert(`Failed to send email. Error: ${error.text || error.message || "Unknown Error"}`);
                 }
             );
     };
