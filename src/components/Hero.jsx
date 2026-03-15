@@ -49,7 +49,7 @@ const Hero = () => {
                     </p>
 
                     <div className="mt-12 flex gap-6 items-center">
-                        <a href="#projects" className="bg-accent hover:bg-white text-primary font-mono tracking-wide text-sm font-semibold py-4 px-8 transition-colors duration-300">
+                        <a href="#work" className="bg-accent hover:bg-white text-primary font-mono tracking-wide text-sm font-semibold py-4 px-8 transition-colors duration-300">
                             VIEW PROJECTS &rarr;
                         </a>
                         <a href="#contact" className="text-white hover:text-accent font-mono tracking-wide text-sm border-b border-transparent hover:border-accent transition-colors duration-300 pb-1">
