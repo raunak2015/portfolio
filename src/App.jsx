@@ -29,10 +29,6 @@ const App = () => {
         <div className="relative z-0">
           <Contact />
         </div>
-        {/* Footer */}
-        <footer className="text-center py-8 text-secondary text-sm font-mono tracking-widest uppercase">
-          built with <span className="text-accent hover:text-white transition-colors cursor-pointer">antigravity ai</span>
-        </footer>
       </div>
     </BrowserRouter>
   );
