@@ -11,7 +11,10 @@ const Play = () => {
     const messagesEndRef = useRef(null);
 
     useEffect(() => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        // Only auto-scroll if the user has started interacting (more than the 1 initial message) or the bot is typing
+        if (messages.length > 1 || isTyping) {
+            messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        }
     }, [messages, isTyping]);
 
     const handleSend = () => {
