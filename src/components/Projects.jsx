@@ -9,6 +9,7 @@ const ProjectCard = ({
     description,
     tags,
     category,
+    image,
     source_code_link,
     demo_link,
 }) => {
@@ -21,16 +22,18 @@ const ProjectCard = ({
             transition={{ duration: 0.4 }}
             className="flex flex-col group h-full rounded-sm overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300"
         >
-            {/* Abstract Graphic Area instead of direct image rendering to keep it clean */}
-            <div className="relative w-full h-[180px] bg-white/5 flex items-center justify-center overflow-hidden border-b border-white/5">
-                 <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                 <h4 className="font-serif text-3xl text-white/20 group-hover:text-white/40 italic transition-colors duration-500 z-10 select-none text-center px-4">
-                     {name}
-                 </h4>
+            {/* Image Area with Dark Overlay */}
+            <div className="relative w-full h-[180px] bg-black overflow-hidden border-b border-white/5">
+                <img 
+                    src={image} 
+                    alt={name}
+                    className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700 ease-out mix-blend-luminosity hover:mix-blend-normal"
+                />
+                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-100" />
                  
                  {/* Decorative tech lines */}
-                 <div className="absolute top-4 left-4 w-8 h-[1px] bg-white/10" />
-                 <div className="absolute bottom-4 right-4 w-12 h-[1px] bg-white/10" />
+                 <div className="absolute top-4 left-4 w-8 h-[1px] bg-white/20 z-10" />
+                 <div className="absolute bottom-4 right-4 w-12 h-[1px] bg-white/20 z-10" />
             </div>
 
             <div className="flex flex-col flex-grow p-6 sm:p-8">
