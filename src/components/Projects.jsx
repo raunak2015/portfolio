@@ -27,7 +27,7 @@ const ProjectCard = ({
                 <img 
                     src={image} 
                     alt={name}
-                    className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700 ease-out mix-blend-luminosity hover:mix-blend-normal"
+                    className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 ease-out"
                 />
                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-100" />
                  
@@ -70,6 +70,7 @@ const ProjectCard = ({
                         >
                             Live ↗
                         </a>
+                        {source_code_link && (
                         <a 
                             href={source_code_link} 
                             target="_blank" 
@@ -78,6 +79,7 @@ const ProjectCard = ({
                         >
                             GitHub ↗
                         </a>
+                        )}
                     </div>
                 </div>
             </div>

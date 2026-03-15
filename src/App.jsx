@@ -17,7 +17,7 @@ const App = () => {
       {isLoading && <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />}
       
       <Cursor />
-      <div className={`relative z-0 bg-primary min-h-screen edge-glow transition-opacity duration-1000 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+      <div className={`relative z-0 bg-primary min-h-screen edge-glow noise-overlay corner-glows transition-opacity duration-1000 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
         <div>
           <Navbar />
           <Hero />

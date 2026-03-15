@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Send, Bot, User } from "lucide-react";
 
@@ -8,6 +8,11 @@ const Play = () => {
     ]);
     const [input, setInput] = useState("");
     const [isTyping, setIsTyping] = useState(false);
+    const messagesEndRef = useRef(null);
+
+    useEffect(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, [messages, isTyping]);
 
     const handleSend = () => {
         if (!input.trim()) return;
@@ -17,23 +22,116 @@ const Play = () => {
         setInput("");
         setIsTyping(true);
 
-        // Simulate AI response
         setTimeout(() => {
-            let replyText = "That's an interesting question! I recommend checking out the About section for more details.";
-
             const lowerInput = input.toLowerCase();
-            if (lowerInput.includes("skill") || lowerInput.includes("tech")) {
-                replyText = "Raunak is proficient in React, Node.js, Python, and AI development. He loves building scalable web apps.";
-            } else if (lowerInput.includes("contact") || lowerInput.includes("email")) {
-                replyText = "You can contact him via the form below or email him directly!";
-            } else if (lowerInput.includes("project")) {
-                replyText = "He has built several cool projects including an AI Code Assistant and E-Commerce platforms. Check out the Work section!";
+            
+            // Comprehensive knowledge base about Raunak
+            const knowledgeBase = [
+                {
+                    keywords: ["who", "about", "introduce", "tell me about", "yourself", "raunak", "who is"],
+                    response: "Raunak Shahu is a passionate Full-Stack Developer & AI Engineer from India. He specializes in building scalable web applications, e-commerce platforms, and interactive web games. He's proficient in React, Node.js, JavaScript, and modern web technologies. He's currently available for hire!"
+                },
+                {
+                    keywords: ["skill", "tech", "technology", "stack", "proficient", "know", "language", "framework"],
+                    response: "Raunak's tech stack includes:\n• Frontend: React.js, HTML5, CSS3, JavaScript, Tailwind CSS\n• Backend: Node.js, Express.js\n• Database: MongoDB\n• Tools: Git, Figma, Three.js\n• Other: REST APIs, Responsive Design, AI Integration\nHe's always learning and expanding his skills!"
+                },
+                {
+                    keywords: ["project", "work", "built", "portfolio", "made", "create"],
+                    response: "Raunak has built 13+ production-deployed projects across 3 categories:\n\n🛒 Website Clones (6): Urban Monkey, Titan, Fellow, Cantabil, Drinkolipop, Razer\n🎮 Games (6): Tic Tac Toe, Click Counter, Color Guessing, Whack-a-Mole, Typing Speed Test, Memory Flip\n⚛️ React Apps: Meal Explorer\n\nAll projects are live on Netlify! Check the Work section above."
+                },
+                {
+                    keywords: ["contact", "email", "reach", "hire", "connect", "touch"],
+                    response: "You can reach Raunak at:\n📧 Email: raunakshahu.cg@gmail.com\n💻 GitHub: github.com/raunak2015\n\nHe's currently available for hire! Use the contact form below or scroll down to the Contact section."
+                },
+                {
+                    keywords: ["clone", "website clone", "e-commerce", "urban", "titan", "fellow", "cantabil", "olipop", "razer"],
+                    response: "Raunak has built 6 stunning website clones:\n1. Urban Monkey — Streetwear e-commerce\n2. Titan — Premium watch storefront\n3. Fellow — Coffee gear shop\n4. Cantabil — Fashion retail\n5. Drinkolipop — Olipop soda brand\n6. Razer — Gaming peripherals\n\nEach demonstrates strong CSS, layout, and responsive design skills."
+                },
+                {
+                    keywords: ["game", "play", "tic", "click", "color", "whack", "typing", "memory", "flip"],
+                    response: "Raunak has built 6 interactive web games:\n1. 🎯 Tic Tac Toe — Classic strategy game\n2. 🖱️ Click Counter — Reflex speed test\n3. 🎨 Color Guessing — RGB identification challenge\n4. 🔨 Whack-a-Mole — Arcade classic\n5. ⌨️ Typing Speed Test — WPM tracker\n6. 🃏 Memory Flip — Card matching game\n\nAll built with vanilla JS and modern web tech!"
+                },
+                {
+                    keywords: ["react", "meal", "explorer", "food", "recipe"],
+                    response: "The Meal Explorer is Raunak's React.js project — a dynamic application that lets users discover, search, and explore meal recipes using a public API. It demonstrates his skills in React, API integration, state management, and responsive UI design."
+                },
+                {
+                    keywords: ["education", "study", "college", "university", "degree", "school", "qualification"],
+                    response: "Raunak is a Computer Engineering student with a strong foundation in programming, data structures, algorithms, and web development. He balances academics with hands-on project development, shipping production-grade software alongside his studies."
+                },
+                {
+                    keywords: ["experience", "intern", "job", "work experience", "career"],
+                    response: "Raunak has hands-on experience building 13+ production-deployed web projects. He specializes in frontend development, e-commerce clones, and interactive web applications. He's currently looking for opportunities as a Full-Stack Developer or Frontend Engineer."
+                },
+                {
+                    keywords: ["github", "repo", "repository", "code", "source", "open source"],
+                    response: "Raunak's GitHub: github.com/raunak2015\n\nHe has public repositories for all his projects including:\n• Individual repos for each website clone\n• A 'Games' monorepo with 5 web games\n• react-meal-explorer for his React project\n\nFeel free to check out his code!"
+                },
+                {
+                    keywords: ["available", "hire", "freelance", "open", "looking", "opportunity", "job"],
+                    response: "Yes! ✅ Raunak is currently available for hire. He's open to:\n• Full-time positions (Frontend/Full-Stack Developer)\n• Freelance projects\n• Internship opportunities\n• Collaboration on open-source\n\nReach out at raunakshahu.cg@gmail.com!"
+                },
+                {
+                    keywords: ["resume", "cv", "download"],
+                    response: "Raunak's key highlights for his resume:\n• 13+ deployed projects across web clones, games & React apps\n• Proficient in React, Node.js, MongoDB, Tailwind CSS\n• Strong UI/UX design skills\n• Experience with Git, Figma, and modern dev tools\n\nContact him at raunakshahu.cg@gmail.com for his full resume!"
+                },
+                {
+                    keywords: ["frontend", "front-end", "ui", "ux", "design", "css", "tailwind", "html"],
+                    response: "Raunak is a skilled frontend developer with expertise in:\n• React.js for building dynamic SPAs\n• Tailwind CSS for utility-first styling\n• Responsive Design across all devices\n• CSS animations and transitions\n• Figma for design prototyping\n\nHis 6 website clones showcase his pixel-perfect implementation abilities."
+                },
+                {
+                    keywords: ["backend", "server", "node", "express", "api", "database", "mongo"],
+                    response: "On the backend, Raunak works with:\n• Node.js & Express.js for server development\n• MongoDB for database management\n• REST API design and integration\n• Authentication & data handling\n\nHe builds full-stack applications from frontend to database."
+                },
+                {
+                    keywords: ["hobby", "interest", "fun", "free time", "passion"],
+                    response: "Beyond coding, Raunak is passionate about:\n• 🎮 Building web games\n• 🤖 Exploring AI and machine learning\n• 🎨 UI/UX design\n• 💻 Open source contribution\n• 📚 Learning new technologies\n\nHis love for coding shows in his diverse project portfolio!"
+                },
+                {
+                    keywords: ["location", "where", "city", "country", "based", "from", "live"],
+                    response: "Raunak is based in India. He's open to both remote and on-site opportunities. He can collaborate across time zones and has experience working independently on deployed projects."
+                },
+                {
+                    keywords: ["hello", "hi", "hey", "sup", "greet", "good morning", "good evening"],
+                    response: "Hey there! 👋 Welcome to Raunak's portfolio! I'm his AI assistant. Feel free to ask me about his skills, projects, education, experience, or anything else. I'm here to help!"
+                },
+                {
+                    keywords: ["thank", "thanks", "bye", "goodbye", "see you"],
+                    response: "You're welcome! 😊 If you have any more questions about Raunak, feel free to ask. Don't forget to check out his projects in the Work section and reach out via the Contact form if interested!"
+                },
+                {
+                    keywords: ["deploy", "netlify", "host", "live", "website"],
+                    response: "All of Raunak's projects are deployed live on Netlify! Each project card in the Work section has a 'Live ↗' button that takes you directly to the deployed version. He follows modern deployment practices with CI/CD."
+                },
+                {
+                    keywords: ["strength", "best", "unique", "special", "stand out"],
+                    response: "What makes Raunak stand out:\n• 📦 13+ production-deployed projects (not just tutorials)\n• 🎯 Full-stack capability from UI to database\n• 🚀 Ships real products, not just demos\n• 🎨 Strong eye for design and aesthetics\n• 📈 Constantly learning and growing\n\nHe builds to ship, not just to learn."
+                },
+            ];
+
+            // Find best matching response
+            let bestMatch = null;
+            let bestScore = 0;
+
+            for (const entry of knowledgeBase) {
+                let score = 0;
+                for (const keyword of entry.keywords) {
+                    if (lowerInput.includes(keyword)) {
+                        score += keyword.length; // Longer keyword matches = more specific
+                    }
+                }
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestMatch = entry.response;
+                }
             }
+
+            const replyText = bestMatch || "That's a great question! I don't have a specific answer for that, but you can ask me about Raunak's skills, projects, education, experience, contact info, or availability. Or scroll through the portfolio to learn more!";
 
             const newBotMsg = { id: Date.now() + 1, text: replyText, sender: "bot" };
             setMessages(prev => [...prev, newBotMsg]);
             setIsTyping(false);
-        }, 1500);
+        }, 1200);
     };
 
     return (
@@ -51,14 +149,14 @@ const Play = () => {
                     <span className="ml-2 font-mono text-sm text-gray-400">assistant.exe</span>
                 </div>
 
-                <div className="h-[400px] overflow-y-auto p-6 flex flex-col gap-4 scrollbar-thin">
+                <div className="h-[400px] overflow-y-auto p-6 flex flex-col gap-4 scrollbar-thin" id="chat-container">
                     {messages.map((msg) => (
                         <div key={msg.id} className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}>
                             <div className={`flex items-start gap-3 max-w-[80%] ${msg.sender === "user" ? "flex-row-reverse" : "flex-row"}`}>
                                 <div className={`w-8 h-8 rounded-full flex items-center justify-center ${msg.sender === "user" ? "bg-indigo-600" : "bg-[#915eff]"}`}>
                                     {msg.sender === "user" ? <User size={16} /> : <Bot size={16} />}
                                 </div>
-                                <div className={`p-3 rounded-2xl text-sm ${msg.sender === "user"
+                                <div className={`p-3 rounded-2xl text-sm whitespace-pre-line ${msg.sender === "user"
                                         ? "bg-indigo-600 text-white rounded-tr-none"
                                         : "bg-[#1d1836] text-gray-200 rounded-tl-none border border-gray-700"
                                     }`}>
@@ -81,6 +179,7 @@ const Play = () => {
                             </div>
                         </div>
                     )}
+                    <div ref={messagesEndRef} />
                 </div>
 
                 <div className="p-4 bg-tertiary border-t border-gray-800 flex gap-2">

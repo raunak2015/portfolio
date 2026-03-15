@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Send, Github, Linkedin, Mail } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
     const formRef = useRef();
@@ -20,15 +21,29 @@ const Contact = () => {
         e.preventDefault();
         setLoading(true);
 
-        setTimeout(() => {
-            setLoading(false);
-            alert("Message conceptualized. (Simulated Send)");
-            setForm({
-                name: "",
-                email: "",
-                message: "",
-            });
-        }, 1500);
+        emailjs
+            .sendForm(
+                import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+                formRef.current,
+                import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+            )
+            .then(
+                () => {
+                    setLoading(false);
+                    alert("Thank you! Your message has been sent successfully.");
+                    setForm({
+                        name: "",
+                        email: "",
+                        message: "",
+                    });
+                },
+                (error) => {
+                    setLoading(false);
+                    console.error(error);
+                    alert("Something went wrong. Please try again.");
+                }
+            );
     };
 
     return (

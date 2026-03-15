@@ -102,7 +102,7 @@ export const projects = [
         ],
         category: "Clones",
         image: urbanMonkeyImg,
-        source_code_link: "https://github.com/raunak2015",
+        source_code_link: "https://github.com/raunak2015/URBAN-MONKEY-Clone",
         demo_link: "https://urbon-monkey-clone-raunak.netlify.app",
     },
     {
@@ -114,7 +114,7 @@ export const projects = [
         ],
         category: "Clones",
         image: titanImg,
-        source_code_link: "https://github.com/raunak2015",
+        source_code_link: "https://github.com/raunak2015/Titan-clone",
         demo_link: "https://titan-clone-raunak.netlify.app",
     },
     {
@@ -126,7 +126,7 @@ export const projects = [
         ],
         category: "Clones",
         image: fellowImg,
-        source_code_link: "https://github.com/raunak2015",
+        source_code_link: "https://github.com/raunak2015/Fellow--clone",
         demo_link: "https://fellow-clone-raunak.netlify.app",
     },
     {
@@ -138,7 +138,7 @@ export const projects = [
         ],
         category: "Clones",
         image: cantabilImg,
-        source_code_link: "https://github.com/raunak2015",
+        source_code_link: "https://github.com/raunak2015/cantabilshop-clone",
         demo_link: "https://cantabil-clone-raunak.netlify.app",
     },
     {
@@ -150,7 +150,7 @@ export const projects = [
         ],
         category: "Clones",
         image: drinkolipopImg,
-        source_code_link: "https://github.com/raunak2015",
+        source_code_link: "https://github.com/raunak2015/drinkolipop-clone",
         demo_link: "https://drinkolipop-clone-raunak.netlify.app",
     },
     {
@@ -162,7 +162,7 @@ export const projects = [
         ],
         category: "Clones",
         image: razerImg,
-        source_code_link: "https://github.com/raunak2015",
+        source_code_link: "https://github.com/raunak2015/razer-clone",
         demo_link: "https://razer-clone-raunak.netlify.app",
     },
     {
@@ -174,7 +174,7 @@ export const projects = [
         ],
         category: "React",
         image: mealExplorerImg,
-        source_code_link: "https://github.com/raunak2015",
+        source_code_link: "https://github.com/raunak2015/react-meal-explorer",
         demo_link: "https://meal-explorer-raunak.netlify.app",
     },
     {
@@ -186,7 +186,7 @@ export const projects = [
         ],
         category: "Games",
         image: ticTacToeImg,
-        source_code_link: "https://github.com/raunak2015",
+        source_code_link: "",
         demo_link: "https://raunak-tic-tac-toe.netlify.app",
     },
     {
@@ -198,7 +198,7 @@ export const projects = [
         ],
         category: "Games",
         image: clickCounterImg,
-        source_code_link: "https://github.com/raunak2015",
+        source_code_link: "https://github.com/raunak2015/Games/tree/main/01%20click%20counter%20game",
         demo_link: "https://raunak-click-counter-game.netlify.app",
     },
     {
@@ -210,7 +210,7 @@ export const projects = [
         ],
         category: "Games",
         image: colorGuessingImg,
-        source_code_link: "https://github.com/raunak2015",
+        source_code_link: "https://github.com/raunak2015/Games/tree/main/02%20Color%20Guessing%20Game",
         demo_link: "https://raunak-color-geussing-game.netlify.app",
     },
     {
@@ -222,7 +222,7 @@ export const projects = [
         ],
         category: "Games",
         image: whackAMoleImg,
-        source_code_link: "https://github.com/raunak2015",
+        source_code_link: "https://github.com/raunak2015/Games/tree/main/03%20Whack-a-Mole",
         demo_link: "https://raunak-whack-a-mole.netlify.app",
     },
     {
@@ -234,7 +234,7 @@ export const projects = [
         ],
         category: "React",
         image: typingSpeedImg,
-        source_code_link: "https://github.com/raunak2015",
+        source_code_link: "https://github.com/raunak2015/Games/tree/main/04%20Typing%20Speed%20Test",
         demo_link: "https://raunak-typing-speed-test.netlify.app",
     },
     {
@@ -246,7 +246,7 @@ export const projects = [
         ],
         category: "Games",
         image: memoryFlipImg,
-        source_code_link: "https://github.com/raunak2015",
+        source_code_link: "https://github.com/raunak2015/Games/tree/main/05%20Memory%20Flip%20Card%20Game",
         demo_link: "https://raunak-memory-flip-game.netlify.app",
     },
 ];
