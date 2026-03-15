@@ -1,7 +1,17 @@
 import { Code, Database, Brain, Rocket } from "lucide-react";
-import project1 from "../assets/project1.png";
-import project2 from "../assets/project2.png";
-import project3 from "../assets/project3.png";
+import urbanMonkeyImg from "../assets/projects/urban-monkey.png";
+import titanImg from "../assets/projects/titan.png";
+import fellowImg from "../assets/projects/fellow.png";
+import cantabilImg from "../assets/projects/cantabil.png";
+import drinkolipopImg from "../assets/projects/drinkolipop.png";
+import razerImg from "../assets/projects/razer.png";
+import mealExplorerImg from "../assets/projects/meal-explorer.png";
+import ticTacToeImg from "../assets/projects/tic-tac-toe.png";
+import clickCounterImg from "../assets/projects/click-counter.png";
+import colorGuessingImg from "../assets/projects/color-guessing.png";
+import whackAMoleImg from "../assets/projects/whack-a-mole.png";
+import typingSpeedImg from "../assets/projects/typing-speed.png";
+import memoryFlipImg from "../assets/projects/memory-flip.png";
 
 export const navLinks = [
     {
@@ -91,7 +101,7 @@ export const projects = [
             { name: "e-commerce", color: "text-green-500" },
         ],
         category: "Clones",
-        image: "https://images.unsplash.com/photo-1618401471353-b98a52320bf8?q=80&w=800&auto=format&fit=crop",
+        image: urbanMonkeyImg,
         source_code_link: "https://github.com/raunak2015",
         demo_link: "https://urbon-monkey-clone-raunak.netlify.app",
     },
@@ -103,7 +113,7 @@ export const projects = [
             { name: "retail", color: "text-pink-500" },
         ],
         category: "Clones",
-        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
+        image: titanImg,
         source_code_link: "https://github.com/raunak2015",
         demo_link: "https://titan-clone-raunak.netlify.app",
     },
@@ -115,7 +125,7 @@ export const projects = [
             { name: "minimal", color: "text-green-500" },
         ],
         category: "Clones",
-        image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=800&auto=format&fit=crop",
+        image: fellowImg,
         source_code_link: "https://github.com/raunak2015",
         demo_link: "https://fellow-clone-raunak.netlify.app",
     },
@@ -127,7 +137,7 @@ export const projects = [
             { name: "fashion", color: "text-pink-500" },
         ],
         category: "Clones",
-        image: "https://images.unsplash.com/photo-1614729939124-032a0b56b0ce?q=80&w=800&auto=format&fit=crop",
+        image: cantabilImg,
         source_code_link: "https://github.com/raunak2015",
         demo_link: "https://cantabil-clone-raunak.netlify.app",
     },
@@ -139,7 +149,7 @@ export const projects = [
             { name: "landing", color: "text-green-500" },
         ],
         category: "Clones",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
+        image: drinkolipopImg,
         source_code_link: "https://github.com/raunak2015",
         demo_link: "https://drinkolipop-clone-raunak.netlify.app",
     },
@@ -151,7 +161,7 @@ export const projects = [
             { name: "gaming", color: "text-pink-500" },
         ],
         category: "Clones",
-        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+        image: razerImg,
         source_code_link: "https://github.com/raunak2015",
         demo_link: "https://razer-clone-raunak.netlify.app",
     },
@@ -163,7 +173,7 @@ export const projects = [
             { name: "api", color: "text-green-500" },
         ],
         category: "React",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+        image: mealExplorerImg,
         source_code_link: "https://github.com/raunak2015",
         demo_link: "https://meal-explorer-raunak.netlify.app",
     },
@@ -175,7 +185,7 @@ export const projects = [
             { name: "logic", color: "text-green-500" },
         ],
         category: "Games",
-        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop",
+        image: ticTacToeImg,
         source_code_link: "https://github.com/raunak2015",
         demo_link: "https://raunak-tic-tac-toe.netlify.app",
     },
@@ -187,7 +197,7 @@ export const projects = [
             { name: "interactive", color: "text-pink-500" },
         ],
         category: "Games",
-        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
+        image: clickCounterImg,
         source_code_link: "https://github.com/raunak2015",
         demo_link: "https://raunak-click-counter-game.netlify.app",
     },
@@ -199,7 +209,7 @@ export const projects = [
             { name: "ui-ux", color: "text-green-500" },
         ],
         category: "Games",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
+        image: colorGuessingImg,
         source_code_link: "https://github.com/raunak2015",
         demo_link: "https://raunak-color-geussing-game.netlify.app",
     },
@@ -211,7 +221,7 @@ export const projects = [
             { name: "logic", color: "text-pink-500" },
         ],
         category: "Games",
-        image: "https://images.unsplash.com/photo-1614729939124-032a0b56b0ce?q=80&w=800&auto=format&fit=crop",
+        image: whackAMoleImg,
         source_code_link: "https://github.com/raunak2015",
         demo_link: "https://raunak-whack-a-mole.netlify.app",
     },
@@ -223,7 +233,7 @@ export const projects = [
             { name: "utility", color: "text-green-500" },
         ],
         category: "React",
-        image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=800&auto=format&fit=crop",
+        image: typingSpeedImg,
         source_code_link: "https://github.com/raunak2015",
         demo_link: "https://raunak-typing-speed-test.netlify.app",
     },
@@ -235,7 +245,7 @@ export const projects = [
             { name: "logic", color: "text-pink-500" },
         ],
         category: "Games",
-        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+        image: memoryFlipImg,
         source_code_link: "https://github.com/raunak2015",
         demo_link: "https://raunak-memory-flip-game.netlify.app",
     },
