@@ -1,5 +1,4 @@
 import { Code, Database, Brain, Rocket } from "lucide-react";
-import hackathonTeamImg from "../assets/hackathon-team.png";
 import viralPulseImg from "../assets/projects/viral-pulse.png";
 import urbanMonkeyImg from "../assets/projects/urban-monkey.png";
 import titanImg from "../assets/projects/titan.png";

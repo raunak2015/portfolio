@@ -1,45 +1,73 @@
-# Modern Professional Portfolio
+# Raunak Shahu Portfolio
 
-A high-performance, interactive personal portfolio website built with React, Vite, and Tailwind CSS. Featuring 3D carousels, parallax effects, and glassmorphism design.
+Personal portfolio website for Raunak Shahu, built to showcase skills, projects, hackathons, certifications, achievements, and contact details in a polished single-page experience.
 
-## 🚀 Features
+## Overview
 
-- **Responsive Design**: Fully responsive across all devices (Mobile, Tablet, Desktop).
-- **Interactive UI**: Parallax mouse-tracking glows and smooth motion animations using Framer Motion.
-- **3D Certification Carousel**: Interactive 3D coverflow effect for displaying certifications.
-- **Terminal-style Hero**: Geeky yet professional terminal-inspired introduction.
-- **Tech Stack Marquee**: Continuous horizontal scrolling skills marquee.
-- **Glassmorphism**: Sleek, modern container styles with vibrant color palettes.
+This portfolio is built with React, Vite, and Tailwind CSS. It uses motion-based UI, glassmorphism cards, a terminal-style hero section, and responsive layouts that work well on mobile and desktop.
 
-## 🛠️ Tech Stack
+## What’s Inside
 
-- **Frontend**: React.js, Vite
-- **Styling**: Tailwind CSS, Vanilla CSS
-- **Animations**: Framer Motion, Swiper.js (for 3D effects)
-- **Icons**: Lucide React, Simple Icons
+- **Hero section** with social links, resume viewer, and a terminal-inspired intro
+- **About section** with a short bio and quick stats
+- **Hackathons section** with event details and image gallery support
+- **Skills section** with a modern tech stack presentation
+- **Certifications section** with modal image previews
+- **Achievements section** highlighting key milestones
+- **Projects section** with live demos, source links, and categories
+- **Education and Contact sections** for background and outreach
 
-## 📦 Getting Started
+## Tech Stack
 
-1. **Clone the repository**
+- **Framework**: React
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS, custom CSS
+- **Animation**: Framer Motion
+- **UI Icons**: Lucide React
+- **Deployment**: Netlify
+
+## Key Features
+
+- Responsive layout for mobile, tablet, and desktop
+- Smooth animations and scroll-based section reveals
+- Cloudinary-hosted images for projects and certifications
+- Custom contact form via Netlify Functions
+- Clean component-based structure for easy updates
+
+## Project Structure
+
+- `src/components` - all page sections and reusable UI pieces
+- `src/constants/index.js` - portfolio content, links, projects, and metadata
+- `src/assets` - local project images and static files
+- `netlify/functions` - serverless email function
+
+## Getting Started
+
+1. Clone the repository
    ```bash
    git clone https://github.com/raunak2015/portfolio.git
    ```
 
-2. **Install dependencies**
+2. Install dependencies
    ```bash
    npm install
    ```
 
-3. **Start the development server**
+3. Run the development server
    ```bash
    npm run dev
    ```
 
-4. **Build for production**
+4. Build for production
    ```bash
    npm run build
    ```
 
-## 📄 License
+## Notes
+
+- Some media is loaded from Cloudinary to keep the app lightweight.
+- The contact workflow is wired for Netlify deployment.
+
+## License
 
 This project is licensed under the MIT License.
