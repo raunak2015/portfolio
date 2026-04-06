@@ -61,7 +61,7 @@ const About = () => {
           >
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden border-2 border-white/10 p-2 glass-container shadow-2xl">
               <img
-                src="https://res.cloudinary.com/dhbxrjpgc/image/upload/v1770567788/WhatsApp_Image_2026-02-08_at_9.52.07_PM_dobxuw.jpg"
+                src="https://res.cloudinary.com/dhbxrjpgc/image/upload/v1778174122/WhatsApp_Image_2026-05-07_at_10.44.04_PM_xnhz1m.jpg"
                 alt="Raunak Shahu"
                 className="w-full h-full object-cover rounded-xl filter grayscale hover:grayscale-0 transition-all duration-700"
               />

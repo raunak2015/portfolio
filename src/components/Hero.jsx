@@ -21,7 +21,7 @@ const Hero = () => {
             {/* Profile Photo in Hero (Requirement 3.0) */}
             <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-[#ec4899] shadow-xl shadow-[#ec4899]/20">
               <img 
-                src="https://res.cloudinary.com/dhbxrjpgc/image/upload/v1770567788/WhatsApp_Image_2026-02-08_at_9.52.07_PM_dobxuw.jpg" 
+                src="https://res.cloudinary.com/dhbxrjpgc/image/upload/v1778174122/WhatsApp_Image_2026-05-07_at_10.44.04_PM_xnhz1m.jpg" 
                 alt="Raunak Shahu" 
                 className="w-full h-full object-cover"
               />
