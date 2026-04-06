@@ -23,7 +23,7 @@ const Hero = () => {
               <img 
                 src="https://res.cloudinary.com/dhbxrjpgc/image/upload/v1778174122/WhatsApp_Image_2026-05-07_at_10.44.04_PM_xnhz1m.jpg" 
                 alt="Raunak Shahu" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
 
