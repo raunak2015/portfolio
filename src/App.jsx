@@ -4,7 +4,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import Experience from "./components/Experience";
+import Hackathons from "./components/Hackathons";
 import Education from "./components/Education";
 import Play from "./components/Play";
 import Contact from "./components/Contact";
@@ -61,7 +61,7 @@ const App = () => {
         <main className="flex flex-col gap-0">
           <Hero />
           <About />
-          <Experience />
+          <Hackathons />
           <Skills />
           <Projects />
           <Education />

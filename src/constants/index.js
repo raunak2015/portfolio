@@ -21,8 +21,8 @@ export const navLinks = [
         title: "About",
     },
     {
-        id: "experience",
-        title: "Experience",
+        id: "hackathons",
+        title: "Hackathons",
     },
     {
         id: "skills",
@@ -108,14 +108,14 @@ export const technologies = [
     },
 ];
 
-export const experiences = [
+export const hackathons = [
   {
     id: 1,
     title: "Team Leader & Code Catalyst",
     company: "CRAFTATHON | IEEE Computer Society",
     duration: "(Feb 2024)",
     description: "Led a cross-functional team of 4 to design and develop ViralPulse AI. Orchestrated the system architecture, integrated AI models for trend detection, and managed the frontend development workflow during a 24-hour high-pressure hackathon.",
-    image: hackathonTeamImg,
+    images: [hackathonTeamImg, viralPulseImg],
   },
   {
     id: 2,
