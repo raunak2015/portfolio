@@ -130,21 +130,24 @@ export const experiences = [
 export const educations = [
   {
     id: 1,
-    title: "Bachelor Degree",
-    duration: "2021 - Present",
-    institution: "Computer Science and Engineering",
+    title: "Bachelor of Technology",
+    duration: "2025 - 2029",
+    institution: "Swaminarayan University",
+    description: "Currently pursuing B.Tech with an outstanding 9.86 SGPA in Semester 1.",
   },
   {
     id: 2,
-    title: "Higher Secondary Certificate",
-    duration: "2019 - 2021",
-    institution: "Science Stream",
+    title: "Higher Secondary Certificate (HSC)",
+    duration: "2023 - 2025",
+    institution: "GSEB",
+    description: "Completed 12th grade with a score of 84%.",
   },
   {
     id: 3,
-    title: "Secondary School Certificate",
-    duration: "2009 - 2019",
-    institution: "General Education",
+    title: "Secondary School Certificate (SSC)",
+    duration: "2021 - 2023",
+    institution: "GSEB",
+    description: "Completed 10th grade with a score of 84%.",
   }
 ];
 
