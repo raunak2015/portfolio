@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
+import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
 import Hackathons from "./components/Hackathons";
 import Education from "./components/Education";
@@ -63,6 +64,7 @@ const App = () => {
           <About />
           <Hackathons />
           <Skills />
+          <Certifications />
           <Projects />
           <Education />
           <Play />

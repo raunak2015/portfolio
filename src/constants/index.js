@@ -29,6 +29,10 @@ export const navLinks = [
         title: "Skills",
     },
     {
+        id: "certifications",
+        title: "Certifications",
+    },
+    {
         id: "projects",
         title: "Projects",
     },
@@ -320,4 +324,55 @@ export const projects = [
         source_code_link: "https://github.com/raunak2015/Games/tree/main/05%20Memory%20Flip%20Card%20Game",
         demo_link: "https://raunak-memory-flip-game.netlify.app",
     },
+];
+
+export const certifications = [
+  {
+    title: "OCI 2025 Certified AI Foundations Associate",
+    institution: "Oracle University",
+    date: "Oct 2025",
+    link: "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1775670837/Oracle_page-0001_srdact.jpg",
+  },
+  {
+    title: "Advanced Software Engineering Job Simulation",
+    institution: "Walmart Global Tech",
+    date: "Nov 2025",
+    link: "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1775670833/Walmart_page-0001_rpj8rx.jpg",
+  },
+  {
+    title: "Technology Job Simulation",
+    institution: "Deloitte",
+    date: "Dec 2025",
+    link: "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1775670832/Delootte_certificate3_page-0001_rzptn1.jpg",
+  },
+  {
+    title: "Data Analytics Job Simulation",
+    institution: "Deloitte",
+    date: "Dec 2025",
+    link: "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1775670832/Delootte_certificate2_page-0001_upslcz.jpg",
+  },
+  {
+    title: "Cyber Job Simulation",
+    institution: "Deloitte",
+    date: "Nov 2025",
+    link: "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1775670833/Deloitte_certificate_page-0001_1_mwnl1v.jpg",
+  },
+  {
+    title: "ArtPark CodeForge Hackathon Participant",
+    institution: "IISc Bangalore / ArtPark",
+    date: "2024",
+    link: "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1775670833/ArtPark_page-0001_1_fdgwpy.jpg",
+  },
+  {
+    title: "HackRust 1.0 Participant",
+    institution: "DCRUST Murthal / Unstop",
+    date: "2024",
+    link: "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1775670835/2e2fcb53-4440-40f4-84ab-c7f40c549beb_page-0001_mxgkbz.jpg",
+  },
+  {
+    title: "Protex: Hack-2-Win Participant",
+    institution: "Protege, IGDTUW",
+    date: "2024",
+    link: "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1775670849/2b8d7f57-cc41-4c48-9767-f0901ae7a557_page-0001_fwjqbx.jpg",
+  },
 ];
