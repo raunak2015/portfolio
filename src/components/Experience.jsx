@@ -10,7 +10,26 @@ const ExperienceCard = ({ experience }) => (
     <div className="glass-container p-6 hover:border-[#16f2b3]/50 transition-all duration-300 group">
       <span className="text-[#16f2b3] font-mono text-sm mb-2 block">{experience.duration}</span>
       <h3 className="text-white text-xl font-bold group-hover:text-[#16f2b3] transition-colors">{experience.title}</h3>
-      <p className="text-white/60 mt-1">{experience.company}</p>
+      <p className="text-white/60 mt-1 font-medium">{experience.company}</p>
+      
+      {experience.image && (
+        <div className="mt-4 overflow-hidden rounded-xl bg-[#0d1224] border border-white/5 relative group/img">
+          <motion.img 
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.4 }}
+            src={experience.image} 
+            className="w-full h-48 object-cover opacity-80 group-hover/img:opacity-100 transition-opacity"
+            alt={experience.title}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1224] to-transparent opacity-60"></div>
+        </div>
+      )}
+
+      {experience.description && (
+        <p className="text-white/50 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+          {experience.description}
+        </p>
+      )}
     </div>
   </div>
 );

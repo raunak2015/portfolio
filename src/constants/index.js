@@ -1,4 +1,5 @@
 import { Code, Database, Brain, Rocket } from "lucide-react";
+import hackathonTeamImg from "../assets/hackathon-team.png";
 import viralPulseImg from "../assets/projects/viral-pulse.png";
 import urbanMonkeyImg from "../assets/projects/urban-monkey.png";
 import titanImg from "../assets/projects/titan.png";
@@ -114,6 +115,7 @@ export const experiences = [
     company: "CRAFTATHON | IEEE Computer Society",
     duration: "(Feb 2024)",
     description: "Led a cross-functional team of 4 to design and develop ViralPulse AI. Orchestrated the system architecture, integrated AI models for trend detection, and managed the frontend development workflow during a 24-hour high-pressure hackathon.",
+    image: hackathonTeamImg,
   },
   {
     id: 2,
