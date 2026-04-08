@@ -11,31 +11,50 @@ const CertificationCard = ({ cert, index }) => (
     viewport={{ once: true }}
     className="group relative"
   >
-    <div className="glass-container p-6 h-full flex flex-col hover:border-[#7c3aed]/50 transition-all duration-300">
-      <div className="flex justify-between items-start mb-4">
-        <div className="p-3 rounded-lg bg-[#7c3aed]/10 text-[#7c3aed] group-hover:bg-[#7c3aed] group-hover:text-white transition-all duration-300">
-          <Award size={24} />
+    <div className="glass-container p-0 h-full flex flex-col group overflow-hidden border border-white/10 hover:border-[#7c3aed]/50 transition-all duration-300">
+      {/* Certificate Preview Container */}
+      <div className="relative h-40 w-full overflow-hidden bg-[#0d1224] border-b border-white/5">
+        <motion.img 
+          initial={{ opacity: 0.8 }}
+          whileHover={{ scale: 1.1, opacity: 1 }}
+          transition={{ duration: 0.4 }}
+          src={cert.link} 
+          className="w-full h-full object-cover object-top"
+          alt={cert.title}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d1224] to-transparent opacity-40"></div>
+        <div className="absolute top-4 right-4 z-10">
+          <a 
+            href={cert.link} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="p-2 rounded-full bg-black/50 backdrop-blur-md text-white/70 hover:text-[#16f2b3] hover:bg-black/80 transition-all duration-300 border border-white/10"
+          >
+            <ExternalLink size={16} />
+          </a>
         </div>
-        <a 
-          href={cert.link} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-white/40 hover:text-[#16f2b3] transition-colors"
-        >
-          <ExternalLink size={20} />
-        </a>
       </div>
 
-      <h3 className="text-white text-lg font-bold mb-2 group-hover:text-[#16f2b3] transition-colors">
-        {cert.title}
-      </h3>
-      <p className="text-[#16f2b3] font-mono text-sm mb-4">{cert.institution}</p>
-      
-      <div className="mt-auto pt-4 border-t border-white/5 flex justify-between items-center text-xs text-white/40">
-        <span>{cert.date}</span>
+      {/* Details Container */}
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="p-2 rounded-lg bg-[#7c3aed]/10 text-[#7c3aed] group-hover:bg-[#7c3aed] group-hover:text-white transition-all duration-300">
+            <Award size={20} />
+          </div>
+          <p className="text-[#16f2b3] font-mono text-xs uppercase tracking-wider">{cert.institution}</p>
+        </div>
+
+        <h3 className="text-white text-base font-bold mb-2 group-hover:text-[#16f2b3] transition-colors leading-snug">
+          {cert.title}
+        </h3>
+        
+        <div className="mt-auto pt-4 border-t border-white/5 flex justify-between items-center text-[10px] font-mono text-white/40 uppercase tracking-tighter">
+          <span>{cert.date}</span>
+          <span className="px-2 py-0.5 rounded-full border border-white/10">Verified</span>
+        </div>
       </div>
 
-      {/* Background Glow */}
+      {/* Background Glow Effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#7c3aed]/0 to-[#7c3aed]/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl -z-10"></div>
     </div>
   </motion.div>
