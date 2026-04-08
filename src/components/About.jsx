@@ -1,62 +1,73 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { services } from "../constants";
-
-const ServiceCard = ({ index, title, icon: Icon }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-        className="w-full sm:w-[280px] p-8 border border-white/10 bg-white/5 backdrop-blur-sm group hover:border-white/20 hover:bg-white/10 transition-all duration-300 flex flex-col items-start gap-6"
-    >
-        <div className="w-12 h-12 flex items-center justify-center rounded-sm bg-accent/10 border border-accent/20 group-hover:bg-accent/20 transition-colors">
-            <Icon size={24} className="text-accent" />
-        </div>
-        
-        <div>
-            <h3 className="text-white text-xl font-serif mb-2">
-                {title}
-            </h3>
-            <div className="w-8 h-[1px] bg-accent/30 group-hover:w-16 transition-all duration-500"></div>
-        </div>
-    </motion.div>
-);
 
 const About = () => {
-    return (
-        <section id="about" className="max-w-7xl mx-auto px-6 sm:px-12 py-32 border-t border-white/5">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="mb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8"
-            >
-                <div>
-                    <div className="flex items-center gap-4 mb-4">
-                        <p className="font-mono text-[11px] text-accent uppercase tracking-[0.3em]">
-                            / SERVICES
-                        </p>
-                        <div className="h-[1px] w-12 bg-accent/30"></div>
-                    </div>
-                    <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-serif">
-                        What I <span className="italic text-accent">do.</span>
-                    </h2>
-                </div>
+  return (
+    <section id="about" className="relative py-24 px-6 sm:px-12 lg:px-24 bg-grid">
+      {/* Decorative Line */}
+      <div className="absolute top-0 right-0 w-[50%] h-[2px] bg-gradient-to-r from-transparent via-[#7c3aed] to-transparent opacity-50"></div>
+      
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="flex items-center gap-4 mb-12">
+          <h2 className="text-white text-2xl font-bold uppercase tracking-[0.3em]">
+            About Me
+          </h2>
+          <div className="h-[2px] flex-1 bg-gradient-to-r from-[#7c3aed] to-transparent opacity-30"></div>
+        </div>
 
-                <p className="text-secondary font-sans text-base max-w-xl font-light">
-                    I build robust end-to-end solutions combining modern frontend architectures with scalable backend systems and intelligent AI integrations.
-                </p>
-            </motion.div>
-
-            <div className="flex flex-wrap justify-center lg:justify-start gap-6">
-                {services.map((service, index) => (
-                    <ServiceCard key={service.title} index={index} {...service} />
-                ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left Column: Text */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col gap-6"
+          >
+            <h3 className="text-[#16f2b3] text-xl font-medium uppercase tracking-widest">
+              Who am I?
+            </h3>
+            <p className="text-white/80 text-lg leading-relaxed">
+              My name is <span className="text-[#ec4899] font-bold">Raunak Shahu</span>. I am a passionate Software Engineer with a deep interest in building scalable web applications and intelligent systems. I thrive on solving complex problems and turning ideas into reality through clean, efficient code.
+            </p>
+            <p className="text-white/60 leading-relaxed">
+              With expertise in modern technologies like React, Next.js, and Node.js, I bridge the gap between design and functionality. Whether it's crafting intuitive user interfaces or architecting robust backend systems, I am committed to delivering high-quality software that makes an impact.
+            </p>
+            <div className="flex gap-8 mt-4">
+              <div>
+                <h4 className="text-white font-bold text-2xl">10+</h4>
+                <p className="text-white/40 text-sm uppercase tracking-tighter">Projects Completed</p>
+              </div>
+              <div>
+                <h4 className="text-white font-bold text-2xl">2+</h4>
+                <p className="text-white/40 text-sm uppercase tracking-tighter">Years Experience</p>
+              </div>
             </div>
-        </section>
-    );
+          </motion.div>
+
+          {/* Right Column: Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative flex justify-center"
+          >
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden border-2 border-white/10 p-2 glass-container shadow-2xl">
+              <img
+                src="https://res.cloudinary.com/dhbxrjpgc/image/upload/v1770567788/WhatsApp_Image_2026-02-08_at_9.52.07_PM_dobxuw.jpg"
+                alt="Raunak Shahu"
+                className="w-full h-full object-cover rounded-xl filter grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+            {/* Glow effect behind image */}
+            <div className="absolute -z-10 w-full h-full bg-[#7c3aed]/10 blur-[100px] rounded-full"></div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default About;
