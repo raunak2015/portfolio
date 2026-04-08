@@ -19,8 +19,20 @@ export const navLinks = [
         title: "About",
     },
     {
-        id: "work",
-        title: "Work",
+        id: "experience",
+        title: "Experience",
+    },
+    {
+        id: "skills",
+        title: "Skills",
+    },
+    {
+        id: "projects",
+        title: "Projects",
+    },
+    {
+        id: "education",
+        title: "Education",
     },
     {
         id: "contact",
@@ -58,7 +70,7 @@ export const technologies = [
     },
     {
         name: "JavaScript",
-        icon: "javascript",
+        icon: "js",
     },
     {
         name: "React JS",
@@ -77,20 +89,64 @@ export const technologies = [
         icon: "mongodb",
     },
     {
-        name: "Three JS",
-        icon: "threejs",
-    },
-    {
-        name: "git",
+        name: "Git",
         icon: "git",
     },
     {
-        name: "figma",
+        name: "Figma",
         icon: "figma",
+    },
+    {
+        name: "GitHub",
+        icon: "github",
+    },
+    {
+        name: "Redux Toolkit",
+        icon: "redux",
     },
 ];
 
-export const experiences = [];
+export const experiences = [
+  {
+    id: 1,
+    title: 'Software Engineer',
+    company: "Freelance",
+    duration: "(Jan 2024 - Present)"
+  },
+  {
+    id: 2,
+    title: "FullStack Developer",
+    company: "Personal Projects",
+    duration: "(Jun 2023 - Jan 2024)"
+  },
+  {
+    id: 3,
+    title: "Frontend Developer",
+    company: "Open Source",
+    duration: "(Jan 2023 - Jun 2023)"
+  }
+];
+
+export const educations = [
+  {
+    id: 1,
+    title: "Bachelor Degree",
+    duration: "2021 - Present",
+    institution: "Computer Science and Engineering",
+  },
+  {
+    id: 2,
+    title: "Higher Secondary Certificate",
+    duration: "2019 - 2021",
+    institution: "Science Stream",
+  },
+  {
+    id: 3,
+    title: "Secondary School Certificate",
+    duration: "2009 - 2019",
+    institution: "General Education",
+  }
+];
 
 export const projects = [
     {
