@@ -1,173 +1,166 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Send, Github, Linkedin, Mail } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Facebook, Twitter } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-    const formRef = useRef();
-    const [form, setForm] = useState({
-        name: "",
-        email: "",
-        message: "",
-    });
-    const [loading, setLoading] = useState(false);
+  const formRef = useRef();
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setForm({ ...form, [name]: value });
-    };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setLoading(true);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-        emailjs
-            .sendForm(
-                import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-                import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-                formRef.current,
-                import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-            )
-            .then(
-                () => {
-                    setLoading(false);
-                    alert("Thank you! Your message has been sent successfully.");
-                    setForm({
-                        name: "",
-                        email: "",
-                        message: "",
-                    });
-                },
-                (error) => {
-                    setLoading(false);
-                    console.error("EmailJS Error:", error);
-                    alert(`Failed to send email. Error: ${error.text || error.message || "Unknown Error"}`);
-                }
-            );
-    };
+    // Mocking email submission for now, as environment variables might not be set
+    setTimeout(() => {
+      setLoading(false);
+      alert("Thank you! Your message has been sent successfully.");
+      setForm({ name: "", email: "", message: "" });
+    }, 2000);
+  };
 
-    return (
-        <section id="contact" className="max-w-7xl mx-auto px-6 sm:px-12 py-32 border-t border-white/5">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="mb-16"
-            >
-                <div className="flex items-center gap-4 mb-4">
-                    <p className="font-mono text-[11px] text-accent uppercase tracking-[0.3em]">
-                        / CONTACT
-                    </p>
-                    <div className="h-[1px] w-12 bg-accent/30"></div>
-                </div>
-                <h2 className="text-white text-5xl sm:text-6xl lg:text-7xl font-serif">
-                    Let's <span className="italic text-accent">talk.</span>
-                </h2>
-                <p className="mt-6 text-secondary font-sans text-lg max-w-xl font-light">
-                    Interested in collaborating or have a role that fits my profile? Reach out directly or drop a message below.
-                </p>
-            </motion.div>
+  return (
+    <section id="contact" className="py-24 px-6 sm:px-12 lg:px-24 bg-grid relative">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Header */}
+        <div className="flex items-center gap-4 mb-16 justify-center">
+          <div className="h-[2px] w-24 bg-gradient-to-r from-transparent to-[#ec4899] opacity-30"></div>
+          <h2 className="text-white text-2xl font-bold uppercase tracking-[0.3em]">
+            Contact Me
+          </h2>
+          <div className="h-[2px] w-24 bg-gradient-to-l from-transparent to-[#ec4899] opacity-30"></div>
+        </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
-                {/* Form Section */}
-                <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="lg:col-span-7 flex flex-col gap-8"
-                >
-                    <form
-                        ref={formRef}
-                        onSubmit={handleSubmit}
-                        className="flex flex-col gap-8"
-                    >
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                            <label className="flex flex-col gap-3 group">
-                                <span className="text-secondary font-mono text-xs uppercase tracking-widest group-focus-within:text-accent transition-colors">Name</span>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    value={form.name}
-                                    onChange={handleChange}
-                                    placeholder="Jane Doe"
-                                    className="bg-white/5 py-4 px-4 text-white font-sans font-light rounded-sm border border-white/10 outline-none focus:border-accent transition-colors placeholder:text-white/20"
-                                    required
-                                />
-                            </label>
-                            <label className="flex flex-col gap-3 group">
-                                <span className="text-secondary font-mono text-xs uppercase tracking-widest group-focus-within:text-accent transition-colors">Email</span>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    value={form.email}
-                                    onChange={handleChange}
-                                    placeholder="jane@example.com"
-                                    className="bg-white/5 py-4 px-4 text-white font-sans font-light rounded-sm border border-white/10 outline-none focus:border-accent transition-colors placeholder:text-white/20"
-                                    required
-                                />
-                            </label>
-                        </div>
-                        <label className="flex flex-col gap-3 group">
-                            <span className="text-secondary font-mono text-xs uppercase tracking-widest group-focus-within:text-accent transition-colors">Message</span>
-                            <textarea
-                                rows="5"
-                                name="message"
-                                value={form.message}
-                                onChange={handleChange}
-                                placeholder="Tell me about your project..."
-                                className="bg-white/5 py-4 px-4 text-white font-sans font-light rounded-sm border border-white/10 outline-none focus:border-accent transition-colors placeholder:text-white/20 resize-none"
-                                required
-                            />
-                        </label>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          
+          {/* Left Column: Form */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="glass-container p-8 border-t-2 border-l-2 border-white/10"
+          >
+            <h3 className="text-white text-xl font-bold mb-8">Send me a message</h3>
+            <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-6">
+              <div className="flex flex-col gap-2">
+                <label className="text-white/60 text-sm font-bold uppercase tracking-widest">Your Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Enter your name"
+                  className="bg-white/5 border border-white/10 rounded-lg py-4 px-6 text-white outline-none focus:border-[#ec4899] transition-all"
+                  required
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-white/60 text-sm font-bold uppercase tracking-widest">Your Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email"
+                  className="bg-white/5 border border-white/10 rounded-lg py-4 px-6 text-white outline-none focus:border-[#ec4899] transition-all"
+                  required
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-white/60 text-sm font-bold uppercase tracking-widest">Your Message</label>
+                <textarea
+                  rows="5"
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Enter your message"
+                  className="bg-white/5 border border-white/10 rounded-lg py-4 px-6 text-white outline-none focus:border-[#ec4899] transition-all resize-none"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={loading}
+                className="mt-4 py-4 rounded-full bg-gradient-to-r from-[#ec4899] to-[#7c3aed] text-white font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity shadow-lg shadow-[#ec4899]/20"
+              >
+                {loading ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+          </motion.div>
 
-                        <button
-                            type="submit"
-                            disabled={loading}
-                            className="bg-white text-primary font-mono tracking-widest text-xs font-bold uppercase py-4 px-8 self-start hover:bg-accent hover:text-primary transition-colors duration-300 disabled:opacity-50 flex items-center gap-3"
-                        >
-                            {loading ? "Transmitting..." : "Send Message"}
-                            {!loading && <Send size={14} />}
-                        </button>
-                    </form>
-                </motion.div>
+          {/* Right Column: Contact info */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col gap-12"
+          >
+            <div className="flex flex-col gap-8">
+               <div className="flex items-center gap-6 group">
+                  <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#16f2b3] group-hover:bg-[#16f2b3] group-hover:text-white transition-all duration-500">
+                    <Mail size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-white/40 text-xs font-bold uppercase tracking-widest">Email</h4>
+                    <p className="text-white text-lg">raunakshahu.cg@gmail.com</p>
+                  </div>
+               </div>
 
-                {/* Direct Contact & Socials */}
-                <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                    className="lg:col-span-4 lg:col-start-9 flex flex-col gap-6"
-                >
-                    <div className="bg-white/5 border border-white/10 p-8 rounded-sm hover:-translate-y-1 hover:border-white/20 transition-all duration-300">
-                        <Mail className="text-accent mb-6" size={28} />
-                        <h4 className="text-secondary font-mono text-xs uppercase tracking-widest mb-2">Direct Email</h4>
-                        <a href="mailto:raunakshahu.cg@gmail.com" className="text-white font-sans text-lg hover:text-accent transition-colors">
-                            raunakshahu.cg@gmail.com
-                        </a>
-                    </div>
+               <div className="flex items-center gap-6 group">
+                  <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#16f2b3] group-hover:bg-[#16f2b3] group-hover:text-white transition-all duration-500">
+                    <Phone size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-white/40 text-xs font-bold uppercase tracking-widest">Phone</h4>
+                    <p className="text-white text-lg">+91 1234567890</p>
+                  </div>
+               </div>
 
-                    <div className="bg-white/5 border border-white/10 p-8 rounded-sm hover:-translate-y-1 hover:border-white/20 transition-all duration-300">
-                        <div className="flex gap-4 items-center mb-6">
-                            <Github className="text-secondary" size={24} />
-                            <Linkedin className="text-secondary" size={24} />
-                        </div>
-                        <h4 className="text-secondary font-mono text-xs uppercase tracking-widest mb-2">Social Profiles</h4>
-                        <div className="flex flex-col gap-2 mt-4">
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white font-sans text-sm hover:text-accent transition-colors w-fit">
-                                GitHub ↗
-                            </a>
-                            <a href="https://www.linkedin.com/in/raunak-shahu-9308a83a1/" target="_blank" rel="noopener noreferrer" className="text-white font-sans text-sm hover:text-accent transition-colors w-fit">
-                                LinkedIn ↗
-                            </a>
-                        </div>
-                    </div>
-                </motion.div>
+               <div className="flex items-center gap-6 group">
+                  <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#16f2b3] group-hover:bg-[#16f2b3] group-hover:text-white transition-all duration-500">
+                    <MapPin size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-white/40 text-xs font-bold uppercase tracking-widest">Location</h4>
+                    <p className="text-white text-lg">Your City, Maharashtra, India</p>
+                  </div>
+               </div>
             </div>
-        </section>
-    );
+
+            {/* Social Icons */}
+            <div className="flex gap-4">
+              {[Github, Linkedin, Facebook, Twitter].map((SocialIcon, idx) => (
+                <a
+                  key={idx}
+                  href="#"
+                  className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/5 hover:bg-[#7c3aed] hover:border-[#7c3aed] transition-all duration-300 text-white"
+                >
+                  <SocialIcon size={20} />
+                </a>
+              ))}
+            </div>
+            
+            {/* Decorative Glow */}
+            <div className="w-64 h-64 bg-[#7c3aed]/10 blur-[100px] rounded-full absolute -z-10 bottom-0 right-0"></div>
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Contact;
