@@ -10,7 +10,12 @@ const EducationCard = ({ education }) => (
     <div className="glass-container p-6 hover:border-[#ec4899]/50 transition-all duration-300 group">
       <span className="text-[#ec4899] font-mono text-sm mb-2 block">{education.duration}</span>
       <h3 className="text-white text-xl font-bold group-hover:text-[#ec4899] transition-colors">{education.title}</h3>
-      <p className="text-white/60 mt-1">{education.institution}</p>
+      <p className="text-white/60 mt-1 font-medium">{education.institution}</p>
+      {education.description && (
+        <p className="text-white/50 mt-3 text-sm leading-relaxed border-t border-white/5 pt-3">
+          {education.description}
+        </p>
+      )}
     </div>
   </div>
 );
