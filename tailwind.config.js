@@ -7,24 +7,35 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: "#050505",    // Deep black background
-                accent: "#00E5FF",     // Bright Cyan
-                secondary: "#9CA3AF",  // Muted gray for body text
-                tertiary: "#111111",   // Slightly elevated background for cards
+                primary: "#0d1224",
+                secondary: "#16f2b3",
+                dark: "#050816",
+                "pink-accent": "#ec4899",
+                "violet-accent": "#7c3aed",
+                "cyan-accent": "#16f2b3",
                 "black-100": "#100d25",
                 "black-200": "#090325",
                 "white-100": "#f3f3f3",
             },
             fontFamily: {
                 sans: ["Inter", "sans-serif"],
-                serif: ["Playfair Display", "serif"],
                 mono: ["JetBrains Mono", "monospace"],
             },
-            boxShadow: {
-                card: "0px 35px 120px -15px #211e35",
+            backgroundImage: {
+                "hero-pattern": "url('/src/assets/herobg.png')",
             },
-            screens: {
-                xs: "450px",
+            animation: {
+                "typewriter": "typewriter 2s steps(40) forwards",
+                "blink": "blink 1s infinite",
+            },
+            keyframes: {
+                typewriter: {
+                    "0%": { width: "0%" },
+                    "100%": { width: "100%" },
+                },
+                blink: {
+                    "50%": { opacity: "0" },
+                }
             }
         },
     },
