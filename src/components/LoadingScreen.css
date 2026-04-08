@@ -98,6 +98,7 @@
         inset 0 0 20px rgba(145, 94, 255, 0.1);
     position: relative;
     overflow: hidden;
+    transform: translateZ(0); /* For consistent border-radius clipping */
 }
 
 .loading-fill {
@@ -108,8 +109,9 @@
     background: linear-gradient(90deg,
             rgba(145, 94, 255, 0.3),
             rgba(145, 94, 255, 0.2));
-    border-radius: 50px;
+    border-radius: 0; /* Flatter advancing side */
     transition: width 0.1s linear;
+    z-index: 1;
 }
 
 .loading-pill::before {
@@ -124,6 +126,7 @@
             rgba(145, 94, 255, 0.1),
             transparent);
     animation: shimmer 2s infinite;
+    z-index: 2;
 }
 
 @keyframes shimmer {
@@ -142,6 +145,8 @@
     color: #915eff;
     letter-spacing: 0.2em;
     font-family: 'Space Grotesk', 'Inter', sans-serif;
+    position: relative;
+    z-index: 3;
 }
 
 .loading-percentage {
@@ -151,6 +156,8 @@
     font-family: 'Space Grotesk', 'Inter', monospace;
     min-width: 60px;
     text-align: right;
+    position: relative;
+    z-index: 3;
 }
 
 /* ===== ANIMATIONS ===== */
