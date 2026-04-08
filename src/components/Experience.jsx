@@ -31,12 +31,17 @@ const Experience = () => {
           
           <div className="flex justify-center lg:justify-start">
              <motion.img 
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
-                src="https://lottie.host/embed/d3568c4d-7738-4e1b-b72e-d096a6f1d211/X6t7hWnU2N.json" // Placeholder or actual Lottie
-                className="w-full max-w-[300px] opacity-80"
-                alt="Working Illustration"
+                initial={{ y: 15 }}
+                animate={{ y: -15 }}
+                transition={{ 
+                  duration: 2.5, 
+                  repeat: Infinity, 
+                  repeatType: "reverse",
+                  ease: "easeInOut"
+                }}
+                src="/assets/experience-3d.png" 
+                className="w-full max-w-[340px] drop-shadow-[0_0_30px_rgba(22,242,179,0.2)] filter brightness-110"
+                alt="Experience Illustration"
              />
              {/* Fallback to a nice 3D-ish icon if lottie doesn't work well */}
              <div className="w-64 h-64 bg-gradient-to-br from-[#16f2b3]/20 to-[#7c3aed]/20 rounded-full blur-[100px] absolute -z-10"></div>

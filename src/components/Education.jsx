@@ -45,11 +45,16 @@ const Education = () => {
               <div className="w-64 h-64 bg-gradient-to-br from-[#ec4899]/20 to-[#7c3aed]/20 rounded-full blur-[100px] absolute -z-10"></div>
               {/* Illustration Placeholder */}
               <motion.img 
-                initial={{ rotate: -5 }}
-                animate={{ rotate: 5 }}
-                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-                src="https://lottie.host/embed/84e466e2-225d-4f1b-b466-93259837593c/xG4u2E5XzR.json" 
-                className="w-full max-w-[300px] opacity-80"
+                initial={{ y: -10 }}
+                animate={{ y: 10 }}
+                transition={{ 
+                  duration: 3, 
+                  repeat: Infinity, 
+                  repeatType: "reverse",
+                  ease: "easeInOut"
+                }}
+                src="/assets/education-3d.png" 
+                className="w-full max-w-[340px] drop-shadow-[0_0_30px_rgba(236,72,153,0.3)] filter brightness-110"
                 alt="Education Illustration"
               />
           </div>
