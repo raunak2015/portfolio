@@ -1,100 +1,123 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { Github, Linkedin, Facebook, Twitter } from "lucide-react";
 
 const Hero = () => {
+  const codeSnippet = `{
+  name: 'Raunak Shahu',
+  skills: ['React', 'NextJS', 'NodeJS', 'MongoDB', 'PostgreSQL', 'Tailwind', 'Framer Motion'],
+  hardWorker: true,
+  quickLearner: true,
+  problemSolver: true,
+  hireable: function() {
     return (
-        <section className="relative w-full min-h-screen mx-auto flex items-center justify-center pt-32 pb-16">
-            <div className="max-w-7xl mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 w-full items-center">
-                
-                {/* Left Column: Intro */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="lg:col-span-7 flex flex-col"
-                >
-                    <div className="flex items-center gap-3 mb-6">
-                        <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                        <p className="font-mono text-[10px] sm:text-[12px] uppercase tracking-[0.2em] text-secondary">
-                            SOFTWARE ENGINEER
-                        </p>
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row sm:items-end gap-6 mb-2">
-                        <h1 className="font-serif text-white text-[60px] sm:text-[80px] lg:text-[100px] leading-[1] font-semibold tracking-tight">
-                            Raunak shahu<span className="italic text-accent">.</span>
-                        </h1>
-                        <div className="relative mb-2">
-                            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-white/10 p-1">
-                                <div className="w-full h-full rounded-full overflow-hidden bg-white/5">
-                                    <img 
-                                        src="https://res.cloudinary.com/dhbxrjpgc/image/upload/v1770567788/WhatsApp_Image_2026-02-08_at_9.52.07_PM_dobxuw.jpg" 
-                                        alt="Raunak" 
-                                        className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
-                                    />
-                                </div>
-                            </div>
-                            <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-[#050505] rounded-full flex items-center justify-center">
-                                <div className="w-4 h-4 bg-green-500 rounded-full animate-pulse"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <h2 className="font-serif text-accent text-[32px] sm:text-[48px] lg:text-[56px] leading-[1.2] mt-2 mb-8 italic">
-                        Building intelligent systems.
-                    </h2>
-
-                    <p className="text-secondary font-sans text-[16px] sm:text-[18px] leading-relaxed max-w-xl font-light">
-                        Full-stack AI Developer specializing in scalable web experiences, generative AI integration, and robust backend architectures. I ship production-grade software — not just coursework demos.
-                    </p>
-
-                    <div className="mt-12 flex gap-6 items-center">
-                        <a href="#work" className="bg-accent hover:bg-white text-primary font-mono tracking-wide text-sm font-semibold py-4 px-8 transition-colors duration-300">
-                            VIEW PROJECTS &rarr;
-                        </a>
-                        <a href="#contact" className="text-white hover:text-accent font-mono tracking-wide text-sm border-b border-transparent hover:border-accent transition-colors duration-300 pb-1">
-                            Contact Me
-                        </a>
-                    </div>
-                </motion.div>
-
-                {/* Right Column: Stats Grid */}
-                <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                    className="lg:col-span-5 flex flex-col gap-6"
-                >
-                    {/* Stat Card 1 */}
-                    <div className="glass p-8 rounded-sm hover:-translate-y-1 transition-transform duration-300">
-                        <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent mb-4">Projects Shipped</p>
-                        <h3 className="text-white text-4xl font-serif mb-2">10+</h3>
-                        <p className="text-secondary text-sm font-sans">Full-stack production deployments</p>
-                    </div>
-
-                    {/* Stat Card 2 */}
-                    <div className="glass p-8 rounded-sm hover:-translate-y-1 transition-transform duration-300">
-                        <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#bf61ff] mb-4">Technologies</p>
-                        <h3 className="text-white text-4xl font-serif mb-2">20+</h3>
-                        <p className="text-secondary text-sm font-sans">Languages, frameworks & databases</p>
-                    </div>
-                    
-                    {/* Stat Card 3 */}
-                    <div className="p-8 border-l border-white/10 mt-4 pl-10">
-                        <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-secondary mb-4">Focus Areas</p>
-                        <h3 className="text-white text-3xl font-serif mb-2 italic">Applied AI</h3>
-                        <p className="text-secondary text-sm font-sans">LLMs, RAG, Computer Vision</p>
-                    </div>
-                </motion.div>
-            </div>
-            
-            {/* Scroll indicator (Optional, keeping it minimal) */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 opacity-50">
-                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white">Scroll</span>
-                <div className="w-[1px] h-[30px] bg-gradient-to-b from-white to-transparent"></div>
-            </div>
-        </section>
+      this.hardWorker &&
+      this.problemSolver &&
+      this.skills.length >= 5
     );
+  }
+};`;
+
+  return (
+    <section className="relative w-full min-h-screen bg-grid flex items-center justify-center pt-20 px-6 sm:px-12 lg:px-24">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        {/* Left Column */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col gap-6"
+        >
+          <div className="flex flex-col gap-2">
+            <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+              Hello, <br />
+              This is <span className="text-[#ec4899]">Raunak Shahu</span>, <br />
+              I'm a Professional <span className="text-[#16f2b3]">Software Engineer</span>.
+            </h2>
+          </div>
+
+          <div className="flex gap-4">
+            {[
+              { Icon: Github, href: "https://github.com/raunak2015" },
+              { Icon: Linkedin, href: "#" },
+              { Icon: Facebook, href: "#" },
+              { Icon: Twitter, href: "#" },
+            ].map((social, i) => (
+              <a
+                key={i}
+                href={social.href}
+                className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/5 hover:bg-[#ec4899] hover:border-[#ec4899] transition-all duration-300 text-white"
+              >
+                <social.Icon size={20} />
+              </a>
+            ))}
+          </div>
+
+          <div className="flex gap-4 mt-4">
+            <button className="px-8 py-3 rounded-full bg-gradient-to-r from-[#ec4899] to-[#7c3aed] text-white font-medium hover:opacity-90 transition-opacity uppercase tracking-wider text-sm shadow-lg shadow-[#ec4899]/20">
+              Contact Me
+            </button>
+            <button className="px-8 py-3 rounded-full border border-white/10 bg-white/5 text-white font-medium hover:bg-white/10 transition-all uppercase tracking-wider text-sm flex items-center gap-2">
+              Get Resume
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.5 10.5L10.5 7.5L9.75 6.75L8 8.5V2.5H7V8.5L5.25 6.75L4.5 7.5L7.5 10.5ZM2.5 11.5V12.5H12.5V11.5H2.5Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </motion.div>
+
+        {/* Right Column: Terminal */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative"
+        >
+          {/* Glass Card for Terminal */}
+          <div className="glass-container border-t-2 border-l-2 border-white/10 shadow-2xl p-6 relative overflow-hidden">
+            {/* Terminal Header */}
+            <div className="flex gap-2 mb-6 border-b border-white/10 pb-4">
+              <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+            </div>
+
+            {/* Code Content */}
+            <div className="font-mono text-sm leading-relaxed overflow-x-auto">
+              <div className="flex gap-4">
+                <div className="flex flex-col text-white/30 text-right select-none">
+                  {Array.from({ length: 15 }).map((_, i) => (
+                    <span key={i}>{i + 1}</span>
+                  ))}
+                </div>
+                <div className="text-white/90">
+                  <span className="text-[#7c3aed]">const</span> <span className="text-[#ec4899]">developer</span> = {'{'} <br />
+                  &nbsp;&nbsp;name: <span className="text-[#16f2b3]">'Raunak Shahu'</span>, <br />
+                  &nbsp;&nbsp;skills: [<span className="text-[#16f2b3]">'React'</span>, <span className="text-[#16f2b3]">'NextJS'</span>, <span className="text-[#16f2b3]">'Tailwind'</span>, <span className="text-[#16f2b3]">'MongoDB'</span>, <span className="text-[#16f2b3]">'NodeJS'</span>, <span className="text-[#16f2b3]">'JS'</span>, <span className="text-[#16f2b3]">'CSS'</span>], <br />
+                  &nbsp;&nbsp;hardWorker: <span className="text-[#ffbd2e]">true</span>, <br />
+                  &nbsp;&nbsp;quickLearner: <span className="text-[#ffbd2e]">true</span>, <br />
+                  &nbsp;&nbsp;problemSolver: <span className="text-[#ffbd2e]">true</span>, <br />
+                  &nbsp;&nbsp;hireable: <span className="text-[#7c3aed]">function</span>() {'{'} <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#7c3aed]">return</span> ( <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#7c3aed]">this</span>.hardWorker && <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#7c3aed]">this</span>.problemSolver && <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#7c3aed]">this</span>.skills.length {'>='} <span className="text-[#ffbd2e]">5</span> <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;); <br />
+                  &nbsp;&nbsp;{'}'} <br />
+                  {'}'};
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Decorative Glows */}
+          <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#7c3aed]/20 blur-[80px] rounded-full"></div>
+          <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#ec4899]/20 blur-[80px] rounded-full"></div>
+        </motion.div>
+
+      </div>
+    </section>
+  );
 };
 
 export default Hero;
