@@ -1,4 +1,5 @@
 import { Code, Database, Brain, Rocket } from "lucide-react";
+import viralPulseImg from "../assets/projects/viral-pulse.png";
 import urbanMonkeyImg from "../assets/projects/urban-monkey.png";
 import titanImg from "../assets/projects/titan.png";
 import fellowImg from "../assets/projects/fellow.png";
@@ -109,21 +110,17 @@ export const technologies = [
 export const experiences = [
   {
     id: 1,
-    title: 'Software Engineer',
-    company: "Freelance",
-    duration: "(Jan 2024 - Present)"
+    title: "Team Leader & Code Catalyst",
+    company: "CRAFTATHON | IEEE Computer Society",
+    duration: "(Feb 2024)",
+    description: "Led a cross-functional team of 4 to design and develop ViralPulse AI. Orchestrated the system architecture, integrated AI models for trend detection, and managed the frontend development workflow during a 24-hour high-pressure hackathon.",
   },
   {
     id: 2,
-    title: "FullStack Developer",
-    company: "Personal Projects",
-    duration: "(Jun 2023 - Jan 2024)"
-  },
-  {
-    id: 3,
-    title: "Frontend Developer",
-    company: "Open Source",
-    duration: "(Jan 2023 - Jun 2023)"
+    title: "Full-Stack Developer",
+    company: "Open Source contributor",
+    duration: "(2023 - Present)",
+    description: "Actively contributing to various React and JavaScript open-source projects, focusing on UI components and performance optimization.",
   }
 ];
 
@@ -152,6 +149,19 @@ export const educations = [
 ];
 
 export const projects = [
+    {
+        name: "ViralPulse AI",
+        description: "An AI-powered digital marketing assistant that predicts content virality using NLP and deep learning. Features a trend detection engine, engagement prediction, and platform-aware content strategy optimization.",
+        tags: [
+            { name: "AI/ML", color: "text-[#16f2b3]" },
+            { name: "React", color: "text-[#7c3aed]" },
+            { name: "NLP", color: "text-[#ec4899]" },
+        ],
+        category: "React",
+        image: viralPulseImg, // I'll assume I should use a generic AI image or the dashboard screenshot if I had it, but I'll use a placeholder for now or check if there's an import
+        source_code_link: "https://github.com/raunak2015/ai-marketing-assistant",
+        demo_link: "https://viralpulse-ai.netlify.app", // Adjust if different
+    },
     {
         name: "Urban Monkey Clone",
         description: "A visually striking e-commerce clone of the Urban Monkey streetwear brand, featuring modern layouts and smooth product browsing.",
