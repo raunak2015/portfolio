@@ -10,20 +10,51 @@ import Play from "./components/Play";
 import Contact from "./components/Contact";
 import Cursor from "./components/Cursor";
 import LoadingScreen from "./components/LoadingScreen";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+
+  // Mouse tracking for parallax glows
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Smoothen the movement
+  const springX = useSpring(mouseX, { damping: 50, stiffness: 400 });
+  const springY = useSpring(mouseY, { damping: 50, stiffness: 400 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e;
+      const { innerWidth, innerHeight } = window;
+      // Calculate normalized value (-0.5 to 0.5)
+      mouseX.set(clientX / innerWidth - 0.5);
+      mouseY.set(clientY / innerHeight - 0.5);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [mouseX, mouseY]);
 
   return (
     <BrowserRouter>
       {isLoading && <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />}
       
       <div className="relative z-0 bg-[#0d1224] min-h-screen overflow-hidden">
-        {/* Floating Glows */}
-        <div className="absolute top-[10%] right-[10%] w-[400px] h-[400px] bg-[#7c3aed]/10 blur-[120px] rounded-full -z-10 animate-pulse"></div>
-        <div className="absolute top-[40%] left-[10%] w-[300px] h-[300px] bg-[#ec4899]/10 blur-[100px] rounded-full -z-10 animate-pulse delay-700"></div>
-        <div className="absolute bottom-[20%] right-[20%] w-[500px] h-[500px] bg-[#16f2b3]/10 blur-[150px] rounded-full -z-10 animate-pulse delay-1000"></div>
+        {/* Floating Interactive Glows */}
+        <motion.div 
+          style={{ x: springX.get() * 100, y: springY.get() * 100 }}
+          className="absolute top-[10%] right-[10%] w-[400px] h-[400px] bg-[#7c3aed]/15 blur-[120px] rounded-full -z-10 animate-pulse"
+        ></motion.div>
+        <motion.div 
+          style={{ x: springX.get() * -80, y: springY.get() * -80 }}
+          className="absolute top-[40%] left-[10%] w-[300px] h-[300px] bg-[#ec4899]/15 blur-[100px] rounded-full -z-10 animate-pulse delay-700"
+        ></motion.div>
+        <motion.div 
+          style={{ x: springX.get() * 120, y: springY.get() * 120 }}
+          className="absolute bottom-[20%] right-[20%] w-[500px] h-[500px] bg-[#16f2b3]/15 blur-[150px] rounded-full -z-10 animate-pulse delay-1000"
+        ></motion.div>
 
         <Navbar />
         
