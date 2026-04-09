@@ -1,6 +1,10 @@
 import React from "react";
 import { technologies } from "../constants";
 
+/**
+ * Skills Component
+ * Renders an infinite scrolling marquee of technology icons.
+ */
 const Skills = () => {
   // Duplicate technologies for smooth infinite loop
   const duplicatedTech = [...technologies, ...technologies];
