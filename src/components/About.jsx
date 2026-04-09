@@ -1,6 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+/**
+ * About Component
+ * Displays personal details, statistics, and a profile image with hover effects.
+ */
 const About = () => {
   return (
     <section id="about" className="relative py-24 px-6 sm:px-12 lg:px-24 bg-grid">
@@ -10,10 +14,10 @@ const About = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-white text-2xl font-bold uppercase tracking-[0.3em]">
-            About Me
+          <h2 className="text-[#16f2b3] text-2xl font-bold uppercase tracking-[0.3em]">
+            Who Am I?
           </h2>
-          <div className="h-[2px] flex-1 bg-gradient-to-r from-[#7c3aed] to-transparent opacity-30"></div>
+          <div className="h-[2px] flex-1 bg-gradient-to-r from-[#16f2b3] to-transparent opacity-30"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -25,9 +29,6 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="flex flex-col gap-6"
           >
-            <h3 className="text-[#16f2b3] text-xl font-medium uppercase tracking-widest">
-              Who am I?
-            </h3>
             <p className="text-white/80 text-lg leading-relaxed">
               My name is <span className="text-[#ec4899] font-bold">Raunak Shahu</span>. I am a passionate Software Engineer with a deep interest in building scalable web applications and intelligent systems. I thrive on solving complex problems and turning ideas into reality through clean, efficient code.
             </p>
@@ -36,12 +37,16 @@ const About = () => {
             </p>
             <div className="flex gap-8 mt-4">
               <div>
-                <h4 className="text-white font-bold text-2xl">10+</h4>
-                <p className="text-white/40 text-sm uppercase tracking-tighter">Projects Completed</p>
+                <h4 className="text-white font-bold text-2xl">14+</h4>
+                <p className="text-white/40 text-sm uppercase tracking-tighter">Projects Deployed</p>
               </div>
               <div>
                 <h4 className="text-white font-bold text-2xl">2+</h4>
                 <p className="text-white/40 text-sm uppercase tracking-tighter">Years Experience</p>
+              </div>
+              <div>
+                <h4 className="text-white font-bold text-2xl">8+</h4>
+                <p className="text-white/40 text-sm uppercase tracking-tighter">Certifications</p>
               </div>
             </div>
           </motion.div>
