@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Facebook, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter } from "lucide-react";
 
 const Hero = () => {
   const codeSnippet = `{
@@ -39,9 +39,8 @@ const Hero = () => {
           <div className="flex gap-4">
             {[
               { Icon: Github, href: "https://github.com/raunak2015" },
-              { Icon: Linkedin, href: "#" },
-              { Icon: Facebook, href: "#" },
-              { Icon: Twitter, href: "#" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/raunak-shahu" },
+              { Icon: Twitter, href: "https://twitter.com/raunak2015" },
             ].map((social, i) => (
               <a
                 key={i}
@@ -54,15 +53,23 @@ const Hero = () => {
           </div>
 
           <div className="flex gap-4 mt-4">
-            <button className="px-8 py-3 rounded-full bg-gradient-to-r from-[#ec4899] to-[#7c3aed] text-white font-medium hover:opacity-90 transition-opacity uppercase tracking-wider text-sm shadow-lg shadow-[#ec4899]/20">
+            <button
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-3 rounded-full bg-gradient-to-r from-[#ec4899] to-[#7c3aed] text-white font-medium hover:opacity-90 transition-opacity uppercase tracking-wider text-sm shadow-lg shadow-[#ec4899]/20"
+            >
               Contact Me
             </button>
-            <button className="px-8 py-3 rounded-full border border-white/10 bg-white/5 text-white font-medium hover:bg-white/10 transition-all uppercase tracking-wider text-sm flex items-center gap-2">
+            <a
+              href="/assets/Raunak_Shahu_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 rounded-full border border-white/10 bg-white/5 text-white font-medium hover:bg-white/10 transition-all uppercase tracking-wider text-sm flex items-center gap-2"
+            >
               Get Resume
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.5 10.5L10.5 7.5L9.75 6.75L8 8.5V2.5H7V8.5L5.25 6.75L4.5 7.5L7.5 10.5ZM2.5 11.5V12.5H12.5V11.5H2.5Z" fill="currentColor"/>
               </svg>
-            </button>
+            </a>
           </div>
         </motion.div>
 

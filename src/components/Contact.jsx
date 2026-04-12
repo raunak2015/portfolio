@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Github, Linkedin, Facebook, Twitter } from "lucide-react";
+import { Mail, MapPin, Github, Linkedin, Twitter, Code2 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
@@ -115,40 +115,48 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-white/40 text-xs font-bold uppercase tracking-widest">Email</h4>
-                    <p className="text-white text-lg">raunakshahu.cg@gmail.com</p>
+                     <a href="mailto:raunakshahu.cg@gmail.com" className="text-white text-lg hover:text-[#16f2b3] transition-colors">raunakshahu.cg@gmail.com</a>
                   </div>
                </div>
 
                <div className="flex items-center gap-6 group">
-                  <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#16f2b3] group-hover:bg-[#16f2b3] group-hover:text-white transition-all duration-500">
-                    <Phone size={24} />
-                  </div>
-                  <div>
-                    <h4 className="text-white/40 text-xs font-bold uppercase tracking-widest">Phone</h4>
-                    <p className="text-white text-lg">+91 1234567890</p>
-                  </div>
-               </div>
+                   <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#16f2b3] group-hover:bg-[#16f2b3] group-hover:text-white transition-all duration-500">
+                     <Github size={24} />
+                   </div>
+                   <div>
+                     <h4 className="text-white/40 text-xs font-bold uppercase tracking-widest">GitHub</h4>
+                     <a href="https://github.com/raunak2015" target="_blank" rel="noopener noreferrer" className="text-white text-lg hover:text-[#16f2b3] transition-colors">github.com/raunak2015</a>
+                   </div>
+                </div>
 
                <div className="flex items-center gap-6 group">
-                  <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#16f2b3] group-hover:bg-[#16f2b3] group-hover:text-white transition-all duration-500">
-                    <MapPin size={24} />
-                  </div>
-                  <div>
-                    <h4 className="text-white/40 text-xs font-bold uppercase tracking-widest">Location</h4>
-                    <p className="text-white text-lg">Your City, Maharashtra, India</p>
-                  </div>
-               </div>
+                   <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#16f2b3] group-hover:bg-[#16f2b3] group-hover:text-white transition-all duration-500">
+                     <MapPin size={24} />
+                   </div>
+                   <div>
+                     <h4 className="text-white/40 text-xs font-bold uppercase tracking-widest">Location</h4>
+                     <p className="text-white text-lg">Gandhinagar, Gujarat, India</p>
+                   </div>
+                </div>
             </div>
 
             {/* Social Icons */}
             <div className="flex gap-4">
-              {[Github, Linkedin, Facebook, Twitter].map((SocialIcon, idx) => (
+              {[
+                { Icon: Github, href: "https://github.com/raunak2015", label: "GitHub" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/in/raunak-shahu", label: "LinkedIn" },
+                { Icon: Twitter, href: "https://twitter.com/raunak2015", label: "Twitter" },
+                { Icon: Code2, href: "https://github.com/raunak2015", label: "Portfolio" },
+              ].map(({ Icon, href, label }, idx) => (
                 <a
                   key={idx}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
                   className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/5 hover:bg-[#7c3aed] hover:border-[#7c3aed] transition-all duration-300 text-white"
                 >
-                  <SocialIcon size={20} />
+                  <Icon size={20} />
                 </a>
               ))}
             </div>
