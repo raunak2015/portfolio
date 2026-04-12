@@ -130,3 +130,5 @@ const Hero = () => {
 export default Hero;
 
 // hero tag optimizations
+
+// patch5
