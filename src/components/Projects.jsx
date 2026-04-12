@@ -142,3 +142,5 @@ const Projects = () => {
 };
 
 export default Projects;
+
+// formatting changes
