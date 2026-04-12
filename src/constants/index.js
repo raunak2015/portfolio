@@ -119,7 +119,12 @@ export const hackathons = [
     company: "CRAFTATHON | IEEE Computer Society",
     duration: "(Feb 2024)",
     description: "Led a cross-functional team of 4 to design and develop ViralPulse AI. Orchestrated the system architecture, integrated AI models for trend detection, and managed the frontend development workflow during a 24-hour high-pressure hackathon.",
-    images: [hackathonTeamImg, viralPulseImg],
+    images: [
+      "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1776017639/WhatsApp_Image_2026-04-12_at_5.51.08_PM_1_cq7s6q.jpg",
+      "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1776017640/WhatsApp_Image_2026-04-12_at_5.51.10_PM_visjjl.jpg",
+      "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1776017640/WhatsApp_Image_2026-04-12_at_5.51.08_PM_gt2yvf.jpg",
+      "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1776017640/WhatsApp_Image_2026-04-12_at_5.51.05_PM_xtcuyd.jpg"
+    ],
   },
   {
     id: 2,
