@@ -125,13 +125,6 @@ export const hackathons = [
       "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1776017640/WhatsApp_Image_2026-04-12_at_5.51.08_PM_gt2yvf.jpg",
       "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1776017640/WhatsApp_Image_2026-04-12_at_5.51.05_PM_xtcuyd.jpg"
     ],
-  },
-  {
-    id: 2,
-    title: "Full-Stack Developer",
-    company: "Open Source contributor",
-    duration: "(2023 - Present)",
-    description: "Actively contributing to various React and JavaScript open-source projects, focusing on UI components and performance optimization.",
   }
 ];
 
