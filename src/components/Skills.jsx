@@ -81,3 +81,5 @@ const Skills = () => {
 };
 
 export default Skills;
+
+// layout updates
