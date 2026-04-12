@@ -88,7 +88,3 @@ const App = () => {
 };
 
 export default App;
-
-// app core wrapper
-
-// patch9

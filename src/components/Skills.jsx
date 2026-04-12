@@ -83,7 +83,3 @@ const Skills = () => {
 export default Skills;
 
 // layout updates
-
-// skill tree styling
-
-// patch3

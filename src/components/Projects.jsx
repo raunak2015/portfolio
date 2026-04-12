@@ -144,7 +144,3 @@ const Projects = () => {
 export default Projects;
 
 // formatting changes
-
-// project card fixes
-
-// patch4

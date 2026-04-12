@@ -184,7 +184,7 @@ Here is Raunak's information:
                 }
             }
 
-            const replyText = bestMatch || "That's a great question! I don't have a pre-programmed answer for that yet. If you want this assistant to be truly smart, you can plug in a Gemini API key!";
+            const replyText = bestMatch || "That's a great question! I don't have a pre-programmed answer for that yet. If you want this assistant to be truly smart, you can plug in a Groq API key!";
 
             const newBotMsg = { id: Date.now() + 1, text: replyText, sender: "bot" };
             setMessages(prev => [...prev, newBotMsg]);
