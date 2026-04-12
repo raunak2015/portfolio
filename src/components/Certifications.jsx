@@ -189,3 +189,5 @@ const Certifications = () => {
 };
 
 export default Certifications;
+
+// cert grid config

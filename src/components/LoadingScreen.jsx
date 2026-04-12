@@ -237,3 +237,5 @@ const LoadingScreen = ({ onLoadingComplete }) => {
 };
 
 export default LoadingScreen;
+
+// preloader config

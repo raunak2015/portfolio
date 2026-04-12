@@ -78,3 +78,5 @@ const About = () => {
 export default About;
 
 // style updates
+
+// layout adjustments

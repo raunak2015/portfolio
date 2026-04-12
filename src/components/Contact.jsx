@@ -172,3 +172,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+// minor tweaks

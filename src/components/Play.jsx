@@ -8,12 +8,17 @@ const Play = () => {
     ]);
     const [input, setInput] = useState("");
     const [isTyping, setIsTyping] = useState(false);
-    const messagesEndRef = useRef(null);
+    const chatContainerRef = useRef(null);
 
     useEffect(() => {
         // Only auto-scroll if the user has started interacting (more than the 1 initial message) or the bot is typing
         if (messages.length > 1 || isTyping) {
-            messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+            if (chatContainerRef.current) {
+                chatContainerRef.current.scrollTo({
+                    top: chatContainerRef.current.scrollHeight,
+                    behavior: "smooth"
+                });
+            }
         }
     }, [messages, isTyping]);
 
@@ -25,10 +30,60 @@ const Play = () => {
         setInput("");
         setIsTyping(true);
 
-        setTimeout(() => {
+        setTimeout(async () => {
+            // Use standard environment variable, never hardcode API keys
+            const apiKey = import.meta.env.VITE_GROQ_API_KEY;
+
+            if (apiKey) {
+                try {
+                    const systemPrompt = `You are the AI Assistant for Raunak Shahu's portfolio website. Answer logically, concisely, and professionally in a friendly tone. Use emojis occasionally. Keep responses under 3 sentences.
+Here is Raunak's information:
+- Full-Stack Developer & AI Engineer based in India.
+- Frontend: React.js, Tailwind CSS, HTML, JavaScript. Backend: Node.js, Express, MongoDB. Tools: Figma, Git.
+- Built 13+ production-deployed projects: 6 Website Clones (Urban Monkey, Titan, Fellow, Cantabil, Drinkolipop, Razer), 6 Web Games (Tic Tac Toe, Color Guessing, Whack-a-mole, Typing test, etc.), React apps (Meal Explorer).
+- Education: B.Tech in Computer Engineering at Swaminarayan University (9.86 SGPA).
+- Hackathons: Built ViralPulse AI at CRAFTATHON (3rd Place Team Leader).
+- Email: raunakshahu.cg@gmail.com, GitHub: github.com/raunak2015
+- Availability: Open to full-time roles, freelance, and internships. Available for hire!`;
+
+                    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+                        method: "POST",
+                        headers: {
+                            "Authorization": `Bearer ${apiKey}`,
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            model: "llama-3.1-8b-instant",
+                            messages: [
+                                { role: "system", content: systemPrompt },
+                                { role: "user", content: input }
+                            ]
+                        })
+                    });
+
+                    const data = await response.json();
+                    
+                    if (response.ok && data?.choices?.length > 0) {
+                        const replyText = data.choices[0].message.content;
+                        const newBotMsg = { id: Date.now() + 1, text: replyText, sender: "bot" };
+                        setMessages(prev => [...prev, newBotMsg]);
+                        setIsTyping(false);
+                        return; // Exit early
+                    } else {
+                        throw new Error(data.error?.message || "Invalid API key or API limit reached.");
+                    }
+                } catch (error) {
+                    console.error("Groq API Error:", error);
+                    const newBotMsg = { id: Date.now() + 1, text: `API ERROR: ${error.message}`, sender: "bot" };
+                    setMessages(prev => [...prev, newBotMsg]);
+                    setIsTyping(false);
+                    return; // Prevent fallback
+                }
+            }
+
             const lowerInput = input.toLowerCase();
             
-            // Comprehensive knowledge base about Raunak
+            // Comprehensive knowledge base about Raunak (Fallback System)
             const knowledgeBase = [
                 {
                     keywords: ["who", "about", "introduce", "tell me about", "yourself", "raunak", "who is"],
@@ -129,7 +184,7 @@ const Play = () => {
                 }
             }
 
-            const replyText = bestMatch || "That's a great question! I don't have a specific answer for that, but you can ask me about Raunak's skills, projects, education, experience, contact info, or availability. Or scroll through the portfolio to learn more!";
+            const replyText = bestMatch || "That's a great question! I don't have a pre-programmed answer for that yet. If you want this assistant to be truly smart, you can plug in a Gemini API key!";
 
             const newBotMsg = { id: Date.now() + 1, text: replyText, sender: "bot" };
             setMessages(prev => [...prev, newBotMsg]);
@@ -152,7 +207,7 @@ const Play = () => {
                     <span className="ml-2 font-mono text-sm text-gray-400">assistant.exe</span>
                 </div>
 
-                <div className="h-[400px] overflow-y-auto p-6 flex flex-col gap-4 scrollbar-thin" id="chat-container">
+                <div ref={chatContainerRef} className="h-[400px] overflow-y-auto p-6 flex flex-col gap-4 scrollbar-thin" id="chat-container">
                     {messages.map((msg) => (
                         <div key={msg.id} className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}>
                             <div className={`flex items-start gap-3 max-w-[80%] ${msg.sender === "user" ? "flex-row-reverse" : "flex-row"}`}>
@@ -182,7 +237,7 @@ const Play = () => {
                             </div>
                         </div>
                     )}
-                    <div ref={messagesEndRef} />
+                    {/* Reference div removed as scrolling handles directly via container now */}
                 </div>
 
                 <div className="p-4 bg-tertiary border-t border-gray-800 flex gap-2">
