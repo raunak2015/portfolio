@@ -144,7 +144,7 @@ const Contact = () => {
             <div className="flex gap-4">
               {[
                 { Icon: Github, href: "https://github.com/raunak2015", label: "GitHub" },
-                { Icon: Linkedin, href: "https://www.linkedin.com/in/raunak-shahu", label: "LinkedIn" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/in/raunak-shahu-9308a83a1/", label: "LinkedIn" },
                 { Icon: Twitter, href: "https://twitter.com/raunak2015", label: "Twitter" },
                 { Icon: Code2, href: "https://github.com/raunak2015", label: "Portfolio" },
               ].map(({ Icon, href, label }, idx) => (

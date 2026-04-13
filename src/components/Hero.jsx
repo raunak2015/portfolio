@@ -39,7 +39,7 @@ const Hero = () => {
           <div className="flex gap-4">
             {[
               { Icon: Github, href: "https://github.com/raunak2015" },
-              { Icon: Linkedin, href: "https://www.linkedin.com/in/raunak-shahu" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/raunak-shahu-9308a83a1/" },
               { Icon: Twitter, href: "https://twitter.com/raunak2015" },
             ].map((social, i) => (
               <a
