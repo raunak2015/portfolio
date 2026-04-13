@@ -259,7 +259,7 @@ export const projects = [
         ],
         category: "Games",
         image: ticTacToeImg,
-        source_code_link: "",
+        source_code_link: "https://github.com/raunak2015/Games/tree/main/06%20Tic%20Tac%20Toe",
         demo_link: "https://raunak-tic-tac-toe.netlify.app",
     },
     {

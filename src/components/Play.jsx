@@ -40,7 +40,7 @@ const Play = () => {
 Here is Raunak's information:
 - Full-Stack Developer & AI Engineer based in India.
 - Frontend: React.js, Tailwind CSS, HTML, JavaScript. Backend: Node.js, Express, MongoDB. Tools: Figma, Git.
-- Built 13+ production-deployed projects: 6 Website Clones (Urban Monkey, Titan, Fellow, Cantabil, Drinkolipop, Razer), 6 Web Games (Tic Tac Toe, Color Guessing, Whack-a-mole, Typing test, etc.), React apps (Meal Explorer).
+- Built 14+ production-deployed projects: 1 AI SaaS (ViralPulse AI), 6 E-commerce Clones (Urban Monkey, Titan, Fellow, Cantabil, Drinkolipop, Razer), 6 Web Games (Tic Tac Toe, Color Guessing, Whack-a-mole, Typing test, etc.), and specialized React apps (Meal Explorer).
 - Education: B.Tech in Computer Engineering at Swaminarayan University (9.86 SGPA).
 - Hackathons: Built ViralPulse AI at CRAFTATHON (3rd Place Team Leader).
 - Email: raunakshahu.cg@gmail.com, GitHub: github.com/raunak2015
