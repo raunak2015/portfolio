@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Github, Linkedin, Twitter, Code2 } from "lucide-react";
-import emailjs from "@emailjs/browser";
+import { Mail, MapPin, Github, Linkedin, Twitter, Code2, CheckCircle, XCircle } from "lucide-react";
 
 const Contact = () => {
   const formRef = useRef();
@@ -11,22 +10,39 @@ const Contact = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // "success" | "error" | null
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setStatus(null);
 
-    // Mocking email submission for now, as environment variables might not be set
-    setTimeout(() => {
+    try {
+      const response = await fetch("/.netlify/functions/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error("Submit error:", err);
+      setStatus("error");
+    } finally {
       setLoading(false);
-      alert("Thank you! Your message has been sent successfully.");
-      setForm({ name: "", email: "", message: "" });
-    }, 2000);
+    }
   };
 
   return (
@@ -93,10 +109,26 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="mt-4 py-4 rounded-full bg-gradient-to-r from-[#ec4899] to-[#7c3aed] text-white font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity shadow-lg shadow-[#ec4899]/20"
+                className="mt-4 py-4 rounded-full bg-gradient-to-r from-[#ec4899] to-[#7c3aed] text-white font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity shadow-lg shadow-[#ec4899]/20 disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>
+
+              {/* Success Message */}
+              {status === "success" && (
+                <div className="flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-[#16f2b3]/10 border border-[#16f2b3]/30 text-[#16f2b3]">
+                  <CheckCircle size={18} />
+                  <p className="text-sm font-medium">Message sent! I'll get back to you soon. 🎉</p>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {status === "error" && (
+                <div className="flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-[#ec4899]/10 border border-[#ec4899]/30 text-[#ec4899]">
+                  <XCircle size={18} />
+                  <p className="text-sm font-medium">Something went wrong. Please try emailing directly.</p>
+                </div>
+              )}
             </form>
           </motion.div>
 
