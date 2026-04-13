@@ -1,8 +1,8 @@
-const { Resend } = require("resend");
+import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   // Only allow POST requests
   if (event.httpMethod !== "POST") {
     return {
@@ -23,7 +23,7 @@ exports.handler = async (event) => {
 
     const { data, error } = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
-      to: ["raunakshahu.cg@gmail.com"],
+      to: ["srr0607378@gmail.com"],
       subject: `New message from ${name} — Portfolio`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #0d1224; color: #ffffff; border-radius: 12px;">
