@@ -16,100 +16,34 @@ import typingSpeedImg from "../assets/projects/typing-speed.png";
 import memoryFlipImg from "../assets/projects/memory-flip.png";
 
 export const navLinks = [
-    {
-        id: "about",
-        title: "About",
-    },
-    {
-        id: "hackathons",
-        title: "Hackathons",
-    },
-    {
-        id: "skills",
-        title: "Skills",
-    },
-    {
-        id: "certifications",
-        title: "Certifications",
-    },
-    {
-        id: "projects",
-        title: "Projects",
-    },
-    {
-        id: "education",
-        title: "Education",
-    },
-    {
-        id: "contact",
-        title: "Contact",
-    },
+    { id: "about", title: "About" },
+    { id: "hackathons", title: "Hackathons" },
+    { id: "skills", title: "Skills" },
+    { id: "certifications", title: "Certifications" },
+    { id: "projects", title: "Projects" },
+    { id: "education", title: "Education" },
+    { id: "contact", title: "Contact" },
 ];
 
 export const services = [
-    {
-        title: "Web Developer",
-        icon: Code,
-    },
-    {
-        title: "React Native Developer",
-        icon: Rocket,
-    },
-    {
-        title: "Backend Developer",
-        icon: Database,
-    },
-    {
-        title: "AI Engineer",
-        icon: Brain,
-    },
+    { title: "Web Developer", icon: Code },
+    { title: "React Native Developer", icon: Rocket },
+    { title: "Backend Developer", icon: Database },
+    { title: "AI Engineer", icon: Brain },
 ];
 
 export const technologies = [
-    {
-        name: "HTML 5",
-        icon: "html",
-    },
-    {
-        name: "CSS 3",
-        icon: "css",
-    },
-    {
-        name: "JavaScript",
-        icon: "js",
-    },
-    {
-        name: "React JS",
-        icon: "react",
-    },
-    {
-        name: "Tailwind CSS",
-        icon: "tailwind",
-    },
-    {
-        name: "Node JS",
-        icon: "nodejs",
-    },
-    {
-        name: "MongoDB",
-        icon: "mongodb",
-    },
-    {
-        name: "Git",
-        icon: "git",
-    },
-    {
-        name: "Figma",
-        icon: "figma",
-    },
-    {
-        name: "GitHub",
-        icon: "github",
-    },
-    {
-        name: "Redux Toolkit",
-        icon: "redux",
-    },
+    { name: "HTML 5", icon: "html" },
+    { name: "CSS 3", icon: "css" },
+    { name: "JavaScript", icon: "js" },
+    { name: "React JS", icon: "react" },
+    { name: "Tailwind CSS", icon: "tailwind" },
+    { name: "Node JS", icon: "nodejs" },
+    { name: "MongoDB", icon: "mongodb" },
+    { name: "Git", icon: "git" },
+    { name: "Figma", icon: "figma" },
+    { name: "GitHub", icon: "github" },
+    { name: "Redux Toolkit", icon: "redux" },
 ];
 
 export const hackathons = [
@@ -162,9 +96,9 @@ export const projects = [
             { name: "NLP", color: "text-[#ec4899]" },
         ],
         category: "React",
-        image: viralPulseImg, // I'll assume I should use a generic AI image or the dashboard screenshot if I had it, but I'll use a placeholder for now or check if there's an import
+        image: viralPulseImg,
         source_code_link: "https://github.com/raunak2015/ai-marketing-assistant",
-        demo_link: "https://viralpulse-ai.netlify.app", // Adjust if different
+        demo_link: "https://viralpulse-ai.netlify.app",
     },
     {
         name: "Urban Monkey Clone",
@@ -177,6 +111,7 @@ export const projects = [
         image: urbanMonkeyImg,
         source_code_link: "https://github.com/raunak2015/URBAN-MONKEY-Clone",
         demo_link: "https://urbon-monkey-clone-raunak.netlify.app",
+        youtube_link: "https://youtu.be/dReq9aj5TkU?si=5_QSotdGAI47dYCB",
     },
     {
         name: "Titan Clone",
@@ -189,6 +124,7 @@ export const projects = [
         image: titanImg,
         source_code_link: "https://github.com/raunak2015/Titan-clone",
         demo_link: "https://titan-clone-raunak.netlify.app",
+        youtube_link: "https://youtu.be/mOEov7Hs22M?si=3u-EgaCzTuF0hpOg",
     },
     {
         name: "Fellow Clone",
@@ -201,6 +137,7 @@ export const projects = [
         image: fellowImg,
         source_code_link: "https://github.com/raunak2015/Fellow--clone",
         demo_link: "https://fellow-clone-raunak.netlify.app",
+        youtube_link: "https://youtu.be/UFF8oj_NVnw?si=7Or73WDfZ2CTsXah",
     },
     {
         name: "Cantabil Clone",
@@ -213,6 +150,7 @@ export const projects = [
         image: cantabilImg,
         source_code_link: "https://github.com/raunak2015/cantabilshop-clone",
         demo_link: "https://cantabil-clone-raunak.netlify.app",
+        youtube_link: "https://youtu.be/p4O5XJY6uO4?si=upINcNz4VyTSMzvk",
     },
     {
         name: "Drinkolipop Clone",
@@ -225,6 +163,7 @@ export const projects = [
         image: drinkolipopImg,
         source_code_link: "https://github.com/raunak2015/drinkolipop-clone",
         demo_link: "https://drinkolipop-clone-raunak.netlify.app",
+        youtube_link: "https://youtu.be/KkUEh1MufzA?si=BPYx_0yspai3CmQn",
     },
     {
         name: "Razer Clone",
@@ -237,6 +176,7 @@ export const projects = [
         image: razerImg,
         source_code_link: "https://github.com/raunak2015/razer-clone",
         demo_link: "https://razer-clone-raunak.netlify.app",
+        youtube_link: "https://youtu.be/v9_xSSzA5OE?si=7s6SqYv_p8h861rn",
     },
     {
         name: "Meal Explorer",

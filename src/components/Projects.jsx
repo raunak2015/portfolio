@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Youtube, ExternalLink, Github } from "lucide-react";
 import { projects } from "../constants";
 
 const ProjectCard = ({
@@ -9,6 +10,7 @@ const ProjectCard = ({
   image,
   source_code_link,
   demo_link,
+  youtube_link,
 }) => {
   return (
     <motion.div
@@ -56,16 +58,31 @@ const ProjectCard = ({
             href={demo_link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 text-center py-2 rounded-full border border-white/10 bg-white/5 text-white text-xs font-bold uppercase tracking-widest hover:bg-[#ec4899] hover:border-[#ec4899] transition-all duration-300"
+            className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl border border-white/10 bg-white/5 text-white text-[10px] font-bold uppercase tracking-widest hover:bg-[#ec4899] hover:border-[#ec4899] transition-all duration-300"
           >
-            Demo
+            <ExternalLink size={14} />
+            Live
           </a>
+          
+          {youtube_link && (
+            <a
+              href={youtube_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl border border-red-500/50 bg-red-500/10 text-red-500 text-[10px] font-bold uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all duration-300"
+            >
+              <Youtube size={14} />
+              Video
+            </a>
+          )}
+
           <a
             href={source_code_link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 text-center py-2 rounded-full border border-[#7c3aed] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#7c3aed] transition-all duration-300"
+            className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl border border-[#7c3aed] text-white text-[10px] font-bold uppercase tracking-widest hover:bg-[#7c3aed] transition-all duration-300"
           >
+            <Github size={14} />
             Code
           </a>
         </div>
