@@ -9,6 +9,7 @@ import Hackathons from "./components/Hackathons";
 import Education from "./components/Education";
 import Play from "./components/Play";
 import Contact from "./components/Contact";
+import Achievements from "./components/Achievements";
 import Cursor from "./components/Cursor";
 import LoadingScreen from "./components/LoadingScreen";
 import { useState, useEffect } from "react";
@@ -65,6 +66,7 @@ const App = () => {
           <Hackathons />
           <Skills />
           <Certifications />
+          <Achievements />
           <Projects />
           <Education />
           <Play />
