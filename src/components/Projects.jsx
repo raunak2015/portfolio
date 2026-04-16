@@ -16,7 +16,8 @@ const ProjectCard = ({
     <motion.div
       layout
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.4 }}
       className="glass-container flex flex-col group overflow-hidden h-full border-t-2 border-l-2 border-white/10 hover:border-[#7c3aed]/50 transition-all duration-500"
@@ -41,7 +42,7 @@ const ProjectCard = ({
           {tags.slice(0, 3).map((tag) => (
             <span
               key={tag.name}
-              className="px-2 py-1 bg-white/5 border border-white/10 rounded-md text-[10px] text-white/60 font-mono uppercase tracking-widest"
+              className={`px-2 py-1 bg-white/5 border border-white/10 rounded-md text-[10px] font-mono uppercase tracking-widest ${tag.color || 'text-white/60'}`}
             >
               {tag.name}
             </span>
@@ -53,14 +54,14 @@ const ProjectCard = ({
         </p>
 
         {/* Action Buttons */}
-        <div className="flex gap-4 mt-auto pt-4 border-t border-white/5">
+        <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-white/5">
           <a
             href={demo_link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl border border-white/10 bg-white/5 text-white text-[10px] font-bold uppercase tracking-widest hover:bg-[#ec4899] hover:border-[#ec4899] transition-all duration-300"
+            className="flex-1 min-w-[80px] flex items-center justify-center gap-2 py-2 rounded-xl border border-white/10 bg-white/5 text-white text-[10px] font-bold uppercase tracking-widest hover:bg-[#ec4899] hover:border-[#ec4899] transition-all duration-300"
           >
-            <ExternalLink size={14} />
+            <ExternalLink size={12} />
             Live
           </a>
           
@@ -69,9 +70,9 @@ const ProjectCard = ({
               href={youtube_link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl border border-red-500/50 bg-red-500/10 text-red-500 text-[10px] font-bold uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all duration-300"
+              className="flex-1 min-w-[80px] flex items-center justify-center gap-2 py-2 rounded-xl border border-red-500/50 bg-red-500/10 text-red-500 text-[10px] font-bold uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all duration-300"
             >
-              <Youtube size={14} />
+              <Youtube size={12} />
               Video
             </a>
           )}
@@ -80,9 +81,9 @@ const ProjectCard = ({
             href={source_code_link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl border border-[#7c3aed] text-white text-[10px] font-bold uppercase tracking-widest hover:bg-[#7c3aed] transition-all duration-300"
+            className="flex-1 min-w-[80px] flex items-center justify-center gap-2 py-2 rounded-xl border border-[#7c3aed] text-white text-[10px] font-bold uppercase tracking-widest hover:bg-[#7c3aed] transition-all duration-300"
           >
-            <Github size={14} />
+            <Github size={12} />
             Code
           </a>
         </div>
@@ -93,7 +94,7 @@ const ProjectCard = ({
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
-  const categories = ["All", "Clones", "Games", "React"];
+  const categories = ["All", "Full-Stack", "Clones", "Games", "Frontend"];
 
   const filteredProjects = projects.filter((project) =>
     activeFilter === "All" ? true : project.category === activeFilter
@@ -143,7 +144,7 @@ const Projects = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* View All Button (Styled like the target site) */}
+        {/* View All Button */}
         <div className="flex justify-center mt-16">
            <a
              href="https://github.com/raunak2015"

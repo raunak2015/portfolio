@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Github, Linkedin, Twitter, Code2, CheckCircle, XCircle } from "lucide-react";
+import { socialLinks } from "../constants";
 
 const Contact = () => {
   const formRef = useRef();
@@ -172,23 +173,19 @@ const Contact = () => {
                 </div>
             </div>
 
-            {/* Social Icons */}
-            <div className="flex gap-4">
-              {[
-                { Icon: Github, href: "https://github.com/raunak2015", label: "GitHub" },
-                { Icon: Linkedin, href: "https://www.linkedin.com/in/raunak-shahu-9308a83a1/", label: "LinkedIn" },
-                { Icon: Twitter, href: "https://twitter.com/raunak2015", label: "Twitter" },
-                { Icon: Code2, href: "https://github.com/raunak2015", label: "Portfolio" },
-              ].map(({ Icon, href, label }, idx) => (
+            {/* Social Icons (Requirement 5.12) */}
+            <div className="flex flex-wrap gap-4">
+              {socialLinks.map((social, idx) => (
                 <a
                   key={idx}
-                  href={href}
+                  href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={label}
+                  aria-label={social.name}
+                  title={social.name}
                   className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/5 hover:bg-[#7c3aed] hover:border-[#7c3aed] transition-all duration-300 text-white"
                 >
-                  <Icon size={20} />
+                  <social.icon size={20} />
                 </a>
               ))}
             </div>

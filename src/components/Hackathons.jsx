@@ -43,6 +43,22 @@ const HackathonCard = ({ hackathon }) => {
             {hackathon.description}
           </p>
         )}
+
+        {/* Mandatory Details */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 pb-6 border-b border-white/5">
+          <div className="flex flex-col gap-2">
+            <h4 className="text-[#ec4899] text-xs font-bold uppercase tracking-widest">Problem Statement</h4>
+            <p className="text-white/60 text-sm leading-relaxed italic border-l-2 border-[#ec4899]/30 pl-4">
+              "{hackathon.problemStatement || "Developing scalable solutions for real-world optimization challenges."}"
+            </p>
+          </div>
+          <div className="flex flex-col gap-2">
+            <h4 className="text-[#16f2b3] text-xs font-bold uppercase tracking-widest">Solution & Outcome</h4>
+            <p className="text-white/60 text-sm leading-relaxed border-l-2 border-[#16f2b3]/30 pl-4">
+              {hackathon.solutionOutcome || "Innovative architecture implementation with full production readiness."}
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Gallery Section */}
