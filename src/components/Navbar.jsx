@@ -39,8 +39,8 @@ const Navbar = () => {
                         window.scrollTo(0, 0);
                     }}
                 >
-                    <span className="text-[#16f2b3] font-bold text-2xl tracking-tighter uppercase">
-                        RAUNAK <span className="text-white">SHAHU</span>
+                    <span className="text-2xl font-black tracking-widest uppercase bg-gradient-to-r from-[#16f2b3] via-[#00d1ff] to-[#7c3aed] bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">
+                        RAUNAK<span className="font-light opacity-80 pl-2">SHAHU</span>
                     </span>
                 </Link>
 
