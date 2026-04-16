@@ -14,12 +14,14 @@ import colorGuessingImg from "../assets/projects/color-guessing.png";
 import whackAMoleImg from "../assets/projects/whack-a-mole.png";
 import typingSpeedImg from "../assets/projects/typing-speed.png";
 import memoryFlipImg from "../assets/projects/memory-flip.png";
+import { Youtube, Github, Linkedin, Twitter, ExternalLink, Award, MessageCircle } from "lucide-react";
 
 export const navLinks = [
     { id: "about", title: "About" },
     { id: "hackathons", title: "Hackathons" },
     { id: "skills", title: "Skills" },
     { id: "certifications", title: "Certifications" },
+    { id: "achievements", title: "Achievements" },
     { id: "projects", title: "Projects" },
     { id: "education", title: "Education" },
     { id: "contact", title: "Contact" },
@@ -44,6 +46,7 @@ export const technologies = [
     { name: "Figma", icon: "figma" },
     { name: "GitHub", icon: "github" },
     { name: "Redux Toolkit", icon: "redux" },
+    { name: "Postman", icon: "postman" },
 ];
 
 export const hackathons = [
@@ -53,6 +56,8 @@ export const hackathons = [
     company: "CRAFTATHON | IEEE Computer Society",
     duration: "(Feb 2024)",
     description: "Led a cross-functional team of 4 to design and develop ViralPulse AI. Orchestrated the system architecture, integrated AI models for trend detection, and managed the frontend development workflow during a 24-hour high-pressure hackathon.",
+    problemStatement: "Digital marketers struggle to identify which content will resonate with users before posting, leading to wasted resources and poor engagement.",
+    solutionOutcome: "Developed ViralPulse AI, an NLP-driven dashboard that accurately predicts content virality with 85% precision. Secured a top finalist position and received praise for innovative system architecture.",
     images: [
       "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1776017639/WhatsApp_Image_2026-04-12_at_5.51.08_PM_1_cq7s6q.jpg",
       "https://res.cloudinary.com/dhbxrjpgc/image/upload/v1776017640/WhatsApp_Image_2026-04-12_at_5.51.10_PM_visjjl.jpg",
@@ -95,10 +100,11 @@ export const projects = [
             { name: "React", color: "text-[#7c3aed]" },
             { name: "NLP", color: "text-[#ec4899]" },
         ],
-        category: "React",
+        category: "Full-Stack",
         image: viralPulseImg,
         source_code_link: "https://github.com/raunak2015/ai-marketing-assistant",
         demo_link: "https://viralpulse-ai.netlify.app",
+        youtube_link: "https://youtu.be/dummy-viral",
     },
     {
         name: "Urban Monkey Clone",
@@ -185,10 +191,11 @@ export const projects = [
             { name: "react", color: "text-blue-500" },
             { name: "api", color: "text-green-500" },
         ],
-        category: "React",
+        category: "Frontend",
         image: mealExplorerImg,
         source_code_link: "https://github.com/raunak2015/react-meal-explorer",
         demo_link: "https://meal-explorer-raunak.netlify.app",
+        youtube_link: "https://youtu.be/dummy-meal",
     },
     {
         name: "Tic Tac Toe",
@@ -245,10 +252,11 @@ export const projects = [
             { name: "tool", color: "text-blue-500" },
             { name: "utility", color: "text-green-500" },
         ],
-        category: "React",
+        category: "Frontend",
         image: typingSpeedImg,
         source_code_link: "https://github.com/raunak2015/Games/tree/main/04%20Typing%20Speed%20Test",
         demo_link: "https://raunak-typing-speed-test.netlify.app",
+        youtube_link: "https://youtu.be/dummy-typing",
     },
     {
         name: "Memory Flip",
@@ -261,7 +269,29 @@ export const projects = [
         image: memoryFlipImg,
         source_code_link: "https://github.com/raunak2015/Games/tree/main/05%20Memory%20Flip%20Card%20Game",
         demo_link: "https://raunak-memory-flip-game.netlify.app",
+        youtube_link: "https://youtu.be/dummy", // Placeholder
     },
+];
+
+export const achievements = [
+    {
+        title: "9.86 SGPA in B.Tech Semester 1",
+        description: "Achieved academic excellence among the top performers of the batch at Swaminarayan University.",
+        icon: Award,
+    },
+    {
+        title: "ArtPark CodeForge Finalist",
+        description: "Selected as one of the top finalists in the IISc Bangalore hackathon for innovative AI implementation.",
+        icon: Rocket,
+    }
+];
+
+export const socialLinks = [
+    { name: "GitHub", link: "https://github.com/raunak2015", icon: Github },
+    { name: "LinkedIn", link: "https://www.linkedin.com/in/raunak-shahu-9308a83a1/", icon: Linkedin },
+    { name: "Twitter", link: "https://x.com/RaunakS68078", icon: Twitter },
+    { name: "LeetCode", link: "https://leetcode.com/u/yKCO1iAfs8/", icon: Code },
+    { name: "YouTube", link: "https://www.youtube.com/@projectwithraunak", icon: Youtube },
 ];
 
 export const certifications = [
