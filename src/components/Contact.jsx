@@ -168,7 +168,7 @@ const Contact = () => {
                    </div>
                    <div>
                      <h4 className="text-white/40 text-xs font-bold uppercase tracking-widest">Location</h4>
-                     <p className="text-white text-lg">Gandhinagar, Gujarat, India</p>
+                     <p className="text-white text-lg">Ahmedabad, Gujarat, India</p>
                    </div>
                 </div>
             </div>
