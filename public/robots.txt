@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /private
 
-Sitemap: https://raunakshahu.netlify.app/sitemap.xml
+Sitemap: https://raunakshahu-portfolio.netlify.app/sitemap.xml
